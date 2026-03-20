@@ -1,0 +1,1549 @@
+---
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    transition: fade
+    font-family: 'Trebuchet MS'
+    scrollable: true
+---
+
+<style>
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: #2980b9;
+}
+.reveal {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+</style>
+
+<div style="text-align:center; margin-top: 40px; line-height: 1.4;">
+
+  <img src="https://pelprek.sgp1.digitaloceanspaces.com/banner/3489/148825024520275.png" alt="PPIU Logo" style="width: 400px; margin-bottom: 20px;">
+
+  <h1 style="font-size: 3em; font-weight: 700; color: #2980b9; margin-bottom: 10px;">
+    Programming Language I
+  </h1>
+
+  <h2 style="font-size: 1.6em; font-weight: 500; color: #555;">
+    Lists, Tuples & Dictionaries
+  </h2>
+
+  <div style="border-bottom: 4px solid #e74c3c; width: 45%; margin: 18px auto;"></div>
+  <h3 style="margin-top: 25px; font-weight: 700; color: #050E3C">
+    By: MIN Sothearith
+  </h3>
+
+  <h4 style="font-weight: 700; color: #666;">
+    Phnom Penh International University
+  </h4>
+
+</div>
+
+## Welcome Back! 🎉
+
+<div style="text-align:center; margin-top: 40px;">
+  <h3 style="color: #2980b9;">Organizing Data in Python</h3>
+
+  <p style="font-size: 1.4em; margin-top: 50px;">
+    Today we learn how to <strong>store</strong>, <strong>organize</strong>, and <strong>access</strong> collections of data using Python's most important data structures! 📦
+  </p>
+</div>
+
+::: {.callout-note}
+## 💡 Why It Matters
+Real programs almost never work with just one piece of data. You need to store student names, scores, product prices, settings — **collections** of related information. Lists, tuples, and dictionaries are the tools for this!
+:::
+
+## Today's Plan
+
+**Lists, Tuples & Dictionaries — 3 Hours:**
+
+1. **Part 1** — Lists: Creating, Accessing & Slicing
+2. **Part 2** — List Methods: Adding, Removing & Sorting
+3. **Part 3** — Looping Through Lists
+4. **Part 4** — Tuples: Immutable Sequences
+5. **Part 5** — Dictionaries: Key-Value Pairs
+6. **Part 6** — Dictionary Methods & Looping
+7. **Part 7** — Nested Structures & Combining Data Types
+8. **Part 8** — Practice Projects & Challenges
+
+::: {.callout-tip}
+**⏱️ Time:** ~3 hours | **📝 Goal:** Master Python's core data structures for organizing information!
+:::
+
+## Learning Objectives
+
+**By the end of this class, you will:**
+
+- Create and manipulate **lists** (add, remove, sort, slice)
+- Loop through lists using `for` loops and `enumerate()`
+- Understand **tuples** and when to use them instead of lists
+- Create and use **dictionaries** for key-value data
+- Access, add, update, and delete dictionary entries
+- Loop through dictionaries using `.keys()`, `.values()`, `.items()`
+- Combine lists, tuples, and dictionaries in **nested structures**
+- Build real programs using these data structures
+
+::: {.callout-important}
+## 🎯 Hands-On Learning
+Every concept comes with live examples and practice exercises you will write yourself!
+:::
+
+---
+
+# Part 1: Lists — Creating, Accessing & Slicing
+
+## What is a List?
+
+::: {style="text-align:center; margin-top: 30px;"}
+### A **list** is an ordered, mutable collection of items enclosed in square brackets `[]` {style="color: #2980b9; font-size: 1.4em;"}
+:::
+
+```python
+# Creating lists
+fruits = ["apple", "banana", "cherry"]
+scores = [85, 92, 78, 95, 88]
+mixed = ["Sokha", 20, 3.75, True]   # Can mix types!
+empty = []                            # Empty list
+
+print(fruits)    # ['apple', 'banana', 'cherry']
+print(scores)    # [85, 92, 78, 95, 88]
+print(len(fruits))  # 3
+print(len(scores))  # 5
+```
+
+::: {.callout-note}
+## 💡 Key Facts About Lists
+- **Ordered** — items stay in the order you put them
+- **Mutable** — you CAN change items after creation (unlike strings!)
+- **Allow duplicates** — `[1, 2, 2, 3]` is perfectly valid
+- **Can mix types** — but usually you keep the same type
+:::
+
+## Accessing List Items (Indexing)
+
+Just like strings, each item has a **position** (index) starting from `0`:
+
+```python
+fruits = ["apple", "banana", "cherry", "durian", "elderberry"]
+#          0         1         2         3          4
+#         -5        -4        -3        -2         -1
+
+print(fruits[0])     # "apple"     (first item)
+print(fruits[2])     # "cherry"    (third item)
+print(fruits[-1])    # "elderberry" (last item)
+print(fruits[-2])    # "durian"    (second from last)
+```
+
+```python
+# ❌ What happens if you go out of range?
+print(fruits[10])    # IndexError: list index out of range
+```
+
+::: {.callout-important}
+## 🎯 Same Rules as Strings!
+Index starts at **0**. Last item is `list[-1]`. Going out of range causes an `IndexError`.
+:::
+
+## List Slicing
+
+```python
+fruits = ["apple", "banana", "cherry", "durian", "elderberry"]
+
+# Slicing syntax: list[start:stop]
+print(fruits[1:4])    # ['banana', 'cherry', 'durian']
+print(fruits[:3])     # ['apple', 'banana', 'cherry']
+print(fruits[2:])     # ['cherry', 'durian', 'elderberry']
+print(fruits[-3:])    # ['cherry', 'durian', 'elderberry']
+
+# With step
+print(fruits[::2])    # ['apple', 'cherry', 'elderberry']
+print(fruits[::-1])   # ['elderberry', 'durian', 'cherry', 'banana', 'apple']
+```
+
+::: {.callout-tip}
+## 💡 Slicing Rule
+Same as strings! `list[start:stop]` gives items from `start` up to but **NOT including** `stop`.
+:::
+
+## Lists are Mutable! (Unlike Strings)
+
+::: {style="text-align:center; margin-top: 30px;"}
+### **Mutable** means you **CAN change** items after creating the list {style="color: #27ae60; font-size: 1.4em;"}
+:::
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+# ✅ Change an item directly
+fruits[1] = "blueberry"
+print(fruits)    # ['apple', 'blueberry', 'cherry']
+
+# ✅ Change a slice
+fruits[0:2] = ["avocado", "blackberry"]
+print(fruits)    # ['avocado', 'blackberry', 'cherry']
+```
+
+::: {.callout-warning}
+## ⚠️ Remember the Difference!
+**Strings** are immutable → `name[0] = "J"` gives an ERROR
+
+**Lists** are mutable → `fruits[0] = "avocado"` works perfectly!
+:::
+
+## Practice 1A — List Basics
+
+```python
+# Create a list of 5 student names
+students = ["Sokha", "Dara", "Chenda", "Bopha", "Vanna"]
+
+# Print the list and its length
+print(f"Students: {students}")
+print(f"Total: {len(students)} students")
+
+# Access specific students
+print(f"First student: {students[0]}")
+print(f"Last student: {students[-1]}")
+print(f"Middle three: {students[1:4]}")
+
+# Change a student name
+students[2] = "Chanthy"
+print(f"Updated list: {students}")
+```
+
+## Practice 1B — Score Analysis
+
+```python
+scores = [85, 92, 78, 95, 88, 72, 90, 68, 84, 96]
+
+print(f"All scores:    {scores}")
+print(f"Total scores:  {len(scores)}")
+print(f"First score:   {scores[0]}")
+print(f"Last score:    {scores[-1]}")
+print(f"Top 3 scores:  {scores[-3:]}")
+print(f"Reversed:      {scores[::-1]}")
+
+# Check if a score exists
+if 95 in scores:
+    print("95 is in the list!")
+    print(f"Position: index {scores.index(95)}")
+```
+
+---
+
+# Part 2: List Methods — Adding, Removing & Sorting
+
+## Adding Items to a List
+
+```python
+fruits = ["apple", "banana"]
+
+# append() — add ONE item to the END
+fruits.append("cherry")
+print(fruits)    # ['apple', 'banana', 'cherry']
+
+# insert() — add ONE item at a SPECIFIC position
+fruits.insert(1, "avocado")
+print(fruits)    # ['apple', 'avocado', 'banana', 'cherry']
+
+# extend() — add MULTIPLE items to the END
+fruits.extend(["durian", "elderberry"])
+print(fruits)    # ['apple', 'avocado', 'banana', 'cherry', 'durian', 'elderberry']
+```
+
+::: {.callout-important}
+## 🎯 append() vs extend()
+`append()` adds **one item** (even if it's a list — it adds the whole list as one item!)
+
+`extend()` adds **each item** from another list individually.
+:::
+
+## append() vs extend() — Be Careful!
+
+```python
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+
+# append a list → adds the LIST as one item
+list1.append([4, 5])
+print(list1)    # [1, 2, 3, [4, 5]]  ← nested list!
+
+# extend with a list → adds EACH item
+list2.extend([4, 5])
+print(list2)    # [1, 2, 3, 4, 5]    ← flat list!
+```
+
+```python
+# You can also use + to combine lists (creates a NEW list)
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = a + b
+print(c)    # [1, 2, 3, 4, 5, 6]
+print(a)    # [1, 2, 3]  ← original unchanged!
+```
+
+## Removing Items from a List
+
+```python
+fruits = ["apple", "banana", "cherry", "banana", "durian"]
+
+# remove() — remove the FIRST occurrence of a value
+fruits.remove("banana")
+print(fruits)    # ['apple', 'cherry', 'banana', 'durian']
+
+# pop() — remove and RETURN item at a position (default: last)
+last = fruits.pop()
+print(last)      # "durian"
+print(fruits)    # ['apple', 'cherry', 'banana']
+
+second = fruits.pop(1)
+print(second)    # "cherry"
+print(fruits)    # ['apple', 'banana']
+
+# del — delete by index
+del fruits[0]
+print(fruits)    # ['banana']
+
+# clear() — remove ALL items
+fruits.clear()
+print(fruits)    # []
+```
+
+::: {.callout-warning}
+## ⚠️ Common Error
+`remove()` raises a **ValueError** if the item is not in the list! Check first with `if item in list:`.
+:::
+
+## Sorting Lists
+
+```python
+numbers = [42, 15, 88, 3, 67, 23]
+
+# sort() — sorts IN PLACE (changes the original list)
+numbers.sort()
+print(numbers)    # [3, 15, 23, 42, 67, 88]
+
+# Sort in reverse order
+numbers.sort(reverse=True)
+print(numbers)    # [88, 67, 42, 23, 15, 3]
+
+# sorted() — returns a NEW sorted list (original unchanged)
+original = [42, 15, 88, 3, 67]
+new_sorted = sorted(original)
+print(original)     # [42, 15, 88, 3, 67]  ← unchanged!
+print(new_sorted)   # [3, 15, 42, 67, 88]
+```
+
+```python
+# Sort strings alphabetically
+names = ["Chenda", "Sokha", "Ary", "Bopha", "Dara"]
+names.sort()
+print(names)    # ['Ary', 'Bopha', 'Chenda', 'Dara', 'Sokha']
+
+# reverse() — reverses the order (NOT sorting!)
+names.reverse()
+print(names)    # ['Sokha', 'Dara', 'Chenda', 'Bopha', 'Ary']
+```
+
+## Other Useful List Operations
+
+```python
+numbers = [10, 20, 30, 20, 40, 20]
+
+# count() — how many times does a value appear?
+print(numbers.count(20))     # 3
+
+# index() — what position is the FIRST occurrence?
+print(numbers.index(30))     # 2
+
+# min(), max(), sum() — built-in functions
+print(min(numbers))    # 10
+print(max(numbers))    # 40
+print(sum(numbers))    # 140
+
+# Average
+average = sum(numbers) / len(numbers)
+print(f"Average: {average:.1f}")   # Average: 23.3
+
+# copy() — make a copy of the list
+backup = numbers.copy()
+backup[0] = 999
+print(numbers)    # [10, 20, 30, 20, 40, 20]  ← original safe!
+print(backup)     # [999, 20, 30, 20, 40, 20]
+```
+
+## Summary Table — List Methods
+
+| Method | What It Does | Example |
+|--------|-------------|---------|
+| `append(x)` | Add `x` to end | `[1,2].append(3)` → `[1,2,3]` |
+| `insert(i, x)` | Add `x` at position `i` | `[1,3].insert(1, 2)` → `[1,2,3]` |
+| `extend(list)` | Add all items from another list | `[1].extend([2,3])` → `[1,2,3]` |
+| `remove(x)` | Remove first `x` | `[1,2,2].remove(2)` → `[1,2]` |
+| `pop(i)` | Remove & return item at `i` | `[1,2,3].pop(1)` → returns `2` |
+| `clear()` | Remove all items | `[1,2,3].clear()` → `[]` |
+| `sort()` | Sort in place | `[3,1,2].sort()` → `[1,2,3]` |
+| `reverse()` | Reverse in place | `[1,2,3].reverse()` → `[3,2,1]` |
+| `count(x)` | Count occurrences of `x` | `[1,2,2].count(2)` → `2` |
+| `index(x)` | Find position of first `x` | `[10,20,30].index(20)` → `1` |
+| `copy()` | Make a shallow copy | `backup = nums.copy()` |
+
+## Practice 2A — Shopping List Manager
+
+```python
+shopping = []
+
+# Build the list
+shopping.append("Rice")
+shopping.append("Eggs")
+shopping.append("Milk")
+shopping.append("Bread")
+shopping.append("Fish")
+
+print("=== Shopping List ===")
+for i, item in enumerate(shopping, 1):
+    print(f"  {i}. {item}")
+
+# Oops, forgot something! Insert at position 2
+shopping.insert(2, "Vegetables")
+
+# Don't need bread anymore
+shopping.remove("Bread")
+
+# Sort alphabetically
+shopping.sort()
+
+print("\n=== Updated List ===")
+for i, item in enumerate(shopping, 1):
+    print(f"  {i}. {item}")
+
+print(f"\nTotal items: {len(shopping)}")
+```
+
+## Practice 2B — Grade Calculator
+
+```python
+print("=== Grade Calculator ===")
+print("Enter scores (type 'done' to finish):\n")
+
+scores = []
+while True:
+    entry = input("Score: ").strip()
+    if entry.lower() == "done":
+        break
+    if entry.isdigit():
+        scores.append(int(entry))
+    else:
+        print("  ❌ Please enter a number or 'done'")
+
+if len(scores) > 0:
+    scores.sort(reverse=True)
+
+    print(f"\nAll scores:  {scores}")
+    print(f"Highest:     {max(scores)}")
+    print(f"Lowest:      {min(scores)}")
+    print(f"Average:     {sum(scores) / len(scores):.1f}")
+    print(f"Total:       {sum(scores)}")
+
+    # Count grades
+    a_count = sum(1 for s in scores if s >= 90)
+    b_count = sum(1 for s in scores if 80 <= s < 90)
+    c_count = sum(1 for s in scores if 70 <= s < 80)
+    f_count = sum(1 for s in scores if s < 70)
+
+    print(f"\nGrade A (90+): {a_count}")
+    print(f"Grade B (80-89): {b_count}")
+    print(f"Grade C (70-79): {c_count}")
+    print(f"Grade F (<70): {f_count}")
+else:
+    print("No scores entered.")
+```
+
+---
+
+# Part 3: Looping Through Lists
+
+## `for` Loop with Lists
+
+```python
+fruits = ["apple", "banana", "cherry", "durian"]
+
+# Simple loop — get each item
+for fruit in fruits:
+    print(f"I like {fruit}!")
+
+# Output:
+# I like apple!
+# I like banana!
+# I like cherry!
+# I like durian!
+```
+
+```python
+# Loop with numbers
+scores = [85, 92, 78, 95, 88]
+
+total = 0
+for score in scores:
+    total += score
+
+average = total / len(scores)
+print(f"Average: {average:.1f}")    # Average: 87.6
+```
+
+## `enumerate()` — Get Index AND Value
+
+```python
+fruits = ["apple", "banana", "cherry", "durian"]
+
+# Without enumerate — just values
+for fruit in fruits:
+    print(fruit)
+
+# With enumerate — index AND value
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+# 0: apple
+# 1: banana
+# 2: cherry
+# 3: durian
+
+# Start counting from 1 (for display)
+for num, fruit in enumerate(fruits, 1):
+    print(f"{num}. {fruit}")
+# 1. apple
+# 2. banana
+# 3. cherry
+# 4. durian
+```
+
+::: {.callout-tip}
+## 💡 When to Use `enumerate()`
+Use it whenever you need both the **position** and the **value**. It's cleaner than using `range(len(list))`.
+:::
+
+## `range()` with Lists
+
+```python
+fruits = ["apple", "banana", "cherry", "durian"]
+
+# Using range(len()) — less Pythonic but sometimes useful
+for i in range(len(fruits)):
+    print(f"Index {i}: {fruits[i]}")
+
+# Useful when you need to MODIFY items
+scores = [85, 92, 78, 95, 88]
+
+# Add 5 bonus points to every score
+for i in range(len(scores)):
+    scores[i] += 5
+
+print(scores)    # [90, 97, 83, 100, 93]
+```
+
+## Building Lists with Loops
+
+```python
+# Create a list of squares
+squares = []
+for i in range(1, 11):
+    squares.append(i ** 2)
+print(squares)    # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Filter: keep only passing scores
+all_scores = [85, 42, 92, 55, 78, 38, 95, 61]
+passing = []
+for score in all_scores:
+    if score >= 60:
+        passing.append(score)
+print(f"Passing: {passing}")    # [85, 92, 78, 95, 61]
+```
+
+```python
+# List comprehension — a shortcut! (same result)
+squares = [i ** 2 for i in range(1, 11)]
+print(squares)    # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+passing = [s for s in all_scores if s >= 60]
+print(passing)    # [85, 92, 78, 95, 61]
+```
+
+::: {.callout-note}
+## 💡 List Comprehension
+`[expression for item in list]` — a compact way to create lists.
+
+`[expression for item in list if condition]` — with filtering.
+
+It does the same thing as a loop + append, just shorter!
+:::
+
+## Practice 3A — Student Roster
+
+```python
+students = ["sokha", "dara", "CHENDA", "bopha", " Vanna "]
+
+# Clean up names
+clean_students = []
+for name in students:
+    clean_students.append(name.strip().title())
+
+print("=== Student Roster ===")
+for i, name in enumerate(clean_students, 1):
+    print(f"  {i}. {name}")
+
+# Find longest name
+longest = max(clean_students, key=len)
+print(f"\nLongest name: {longest} ({len(longest)} letters)")
+```
+
+---
+
+# Part 4: Tuples — Immutable Sequences
+
+## What is a Tuple?
+
+::: {style="text-align:center; margin-top: 30px;"}
+### A **tuple** is an ordered, **immutable** collection enclosed in parentheses `()` {style="color: #2980b9; font-size: 1.4em;"}
+:::
+
+```python
+# Creating tuples
+coordinates = (10, 20)
+colors = ("red", "green", "blue")
+person = ("Sokha", 20, "Computer Science")
+single = (42,)     # ← comma is required for single-item tuple!
+empty = ()
+
+print(coordinates)    # (10, 20)
+print(colors)         # ('red', 'green', 'blue')
+print(len(colors))    # 3
+```
+
+::: {.callout-warning}
+## ⚠️ Single-Item Tuple Trap
+`(42)` is just the number 42 in parentheses!
+
+`(42,)` is a tuple with one item — the **comma** makes it a tuple!
+:::
+
+## Accessing Tuple Items
+
+```python
+colors = ("red", "green", "blue", "yellow", "purple")
+
+# Indexing — same as lists
+print(colors[0])      # "red"
+print(colors[-1])     # "purple"
+print(colors[1:3])    # ('green', 'blue')
+
+# ✅ You CAN read items
+print(colors[2])      # "blue"
+
+# ❌ You CANNOT change items
+colors[0] = "pink"    # TypeError: 'tuple' object does not support item assignment
+```
+
+## Tuples are Immutable — Why Use Them?
+
+```python
+# Tuple unpacking — assign multiple values at once!
+person = ("Sokha", 20, "Computer Science")
+
+name, age, major = person    # Unpack into 3 variables
+print(name)     # "Sokha"
+print(age)      # 20
+print(major)    # "Computer Science"
+```
+
+```python
+# Swap two variables using tuple unpacking
+a = 10
+b = 20
+a, b = b, a    # Swap!
+print(a, b)    # 20 10
+```
+
+**When to use tuples instead of lists:**
+
+- Data that should **NOT change** (coordinates, RGB colors, dates)
+- **Returning multiple values** from a function
+- **Dictionary keys** (lists cannot be keys, tuples can!)
+- When you want to signal "this data is fixed"
+
+::: {.callout-tip}
+## 💡 Simple Rule
+If data should change → use a **list**
+
+If data should stay fixed → use a **tuple**
+:::
+
+## Tuple Methods & Operations
+
+```python
+colors = ("red", "green", "blue", "green", "red", "red")
+
+# count() — how many times?
+print(colors.count("red"))     # 3
+
+# index() — first position?
+print(colors.index("green"))   # 1
+
+# Membership test
+print("blue" in colors)        # True
+
+# Length
+print(len(colors))             # 6
+
+# Convert between list and tuple
+my_list = list(colors)         # Tuple → List (now mutable!)
+my_tuple = tuple(my_list)      # List → Tuple (now immutable!)
+```
+
+## Practice 4A — Student Records with Tuples
+
+```python
+# Each student is a tuple: (name, score, grade)
+students = [
+    ("Sokha", 92, "A"),
+    ("Dara", 78, "C"),
+    ("Chenda", 85, "B"),
+    ("Bopha", 95, "A"),
+    ("Vanna", 68, "D"),
+]
+
+print("=== Student Report ===")
+print(f"{'Name':<12} {'Score':>6} {'Grade':>6}")
+print("-" * 26)
+
+for name, score, grade in students:
+    print(f"{name:<12} {score:>6} {grade:>6}")
+
+# Find top student
+top_student = max(students, key=lambda s: s[1])
+print(f"\nTop student: {top_student[0]} with {top_student[1]} points!")
+
+# Calculate average
+avg = sum(s[1] for s in students) / len(students)
+print(f"Class average: {avg:.1f}")
+```
+
+---
+
+# Part 5: Dictionaries — Key-Value Pairs
+
+## What is a Dictionary?
+
+::: {style="text-align:center; margin-top: 30px;"}
+### A **dictionary** stores data as **key: value** pairs inside curly braces `{}` {style="color: #2980b9; font-size: 1.4em;"}
+:::
+
+```python
+# Creating a dictionary
+student = {
+    "name": "Sokha",
+    "age": 20,
+    "major": "Computer Science",
+    "gpa": 3.75
+}
+
+print(student)
+# {'name': 'Sokha', 'age': 20, 'major': 'Computer Science', 'gpa': 3.75}
+```
+
+```python
+# Empty dictionary
+empty = {}
+
+# Dictionary with different value types
+profile = {
+    "username": "sokha_dev",
+    "followers": 150,
+    "is_active": True,
+    "skills": ["Python", "HTML", "CSS"]   # Value can be a list!
+}
+```
+
+::: {.callout-note}
+## 💡 Key Facts About Dictionaries
+- **Unordered** (Python 3.7+ keeps insertion order, but don't rely on it for logic)
+- **Mutable** — you can add, change, and delete entries
+- **Keys must be unique** — no duplicate keys allowed
+- **Keys must be immutable** — strings, numbers, tuples can be keys (NOT lists!)
+- **Values can be anything** — strings, numbers, lists, other dicts...
+:::
+
+## Accessing Dictionary Values
+
+```python
+student = {
+    "name": "Sokha",
+    "age": 20,
+    "major": "Computer Science",
+    "gpa": 3.75
+}
+
+# Method 1: Square brackets (raises KeyError if key doesn't exist)
+print(student["name"])     # "Sokha"
+print(student["gpa"])      # 3.75
+# print(student["email"])  # ❌ KeyError: 'email'
+
+# Method 2: .get() (returns None or default if key doesn't exist)
+print(student.get("name"))         # "Sokha"
+print(student.get("email"))        # None  (no error!)
+print(student.get("email", "N/A")) # "N/A" (custom default)
+```
+
+::: {.callout-tip}
+## 💡 Use `.get()` to Be Safe
+`dict["key"]` crashes if the key is missing. `dict.get("key")` returns `None` safely. Use `.get()` when you're not sure if the key exists!
+:::
+
+## Adding & Updating Dictionary Entries
+
+```python
+student = {"name": "Sokha", "age": 20}
+
+# Add a new key-value pair
+student["major"] = "Computer Science"
+student["gpa"] = 3.75
+print(student)
+# {'name': 'Sokha', 'age': 20, 'major': 'Computer Science', 'gpa': 3.75}
+
+# Update an existing value
+student["age"] = 21
+print(student["age"])    # 21
+
+# Update multiple values at once
+student.update({"gpa": 3.80, "year": 3})
+print(student)
+# {'name': 'Sokha', 'age': 21, 'major': 'Computer Science', 'gpa': 3.8, 'year': 3}
+```
+
+## Removing Dictionary Entries
+
+```python
+student = {
+    "name": "Sokha",
+    "age": 20,
+    "major": "CS",
+    "gpa": 3.75,
+    "temp": "delete me"
+}
+
+# pop() — remove and return a value
+removed = student.pop("temp")
+print(removed)       # "delete me"
+print(student)       # temp is gone
+
+# pop() with default (no error if key missing)
+result = student.pop("email", "Not found")
+print(result)        # "Not found"
+
+# del — delete by key
+del student["gpa"]
+print(student)       # gpa is gone
+
+# clear() — remove everything
+# student.clear()    # {}
+```
+
+## Checking if a Key Exists
+
+```python
+student = {"name": "Sokha", "age": 20, "major": "CS"}
+
+# Check with 'in' (checks KEYS, not values)
+print("name" in student)       # True
+print("email" in student)      # False
+print("Sokha" in student)      # False  (checks keys, not values!)
+
+# Safe pattern: check before accessing
+if "email" in student:
+    print(student["email"])
+else:
+    print("No email on file")
+
+# Or use .get()
+email = student.get("email", "No email on file")
+print(email)    # "No email on file"
+```
+
+## Practice 5A — Student Profile Builder
+
+```python
+print("=== Student Profile Builder ===\n")
+
+# Collect info
+profile = {}
+profile["name"] = input("Name: ").strip().title()
+profile["id"] = input("Student ID: ").strip().upper()
+profile["major"] = input("Major: ").strip().title()
+profile["year"] = input("Year (1-4): ").strip()
+
+# Add GPA
+gpa_input = input("GPA (or press Enter to skip): ").strip()
+if gpa_input:
+    profile["gpa"] = float(gpa_input)
+
+# Display
+print("\n" + "=" * 35)
+print(f"{'STUDENT PROFILE':^35}")
+print("=" * 35)
+for key, value in profile.items():
+    print(f"  {key.upper():<10}: {value}")
+print("=" * 35)
+```
+
+---
+
+# Part 6: Dictionary Methods & Looping
+
+## Looping Through Dictionaries
+
+```python
+student = {"name": "Sokha", "age": 20, "major": "CS", "gpa": 3.75}
+
+# Loop through KEYS (default)
+for key in student:
+    print(key)
+# name, age, major, gpa
+
+# Loop through VALUES
+for value in student.values():
+    print(value)
+# Sokha, 20, CS, 3.75
+
+# Loop through KEY-VALUE pairs
+for key, value in student.items():
+    print(f"{key}: {value}")
+# name: Sokha
+# age: 20
+# major: CS
+# gpa: 3.75
+```
+
+::: {.callout-important}
+## 🎯 The Three Ways to Loop
+- `for key in dict:` or `for key in dict.keys():` → get **keys**
+- `for value in dict.values():` → get **values**
+- `for key, value in dict.items():` → get **both** (most common!)
+:::
+
+## Dictionary `.keys()`, `.values()`, `.items()`
+
+```python
+student = {"name": "Sokha", "age": 20, "major": "CS"}
+
+# Get all keys as a list
+keys = list(student.keys())
+print(keys)      # ['name', 'age', 'major']
+
+# Get all values as a list
+values = list(student.values())
+print(values)    # ['Sokha', 20, 'CS']
+
+# Get all pairs as a list of tuples
+items = list(student.items())
+print(items)     # [('name', 'Sokha'), ('age', 20), ('major', 'CS')]
+```
+
+## Useful Dictionary Patterns
+
+```python
+# Pattern 1: Counting occurrences
+sentence = "the cat sat on the mat the cat"
+word_count = {}
+for word in sentence.split():
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+print(word_count)
+# {'the': 3, 'cat': 2, 'sat': 1, 'on': 1, 'mat': 1}
+```
+
+```python
+# Pattern 2: Counting with .get() (shorter!)
+word_count = {}
+for word in sentence.split():
+    word_count[word] = word_count.get(word, 0) + 1
+print(word_count)
+# Same result: {'the': 3, 'cat': 2, 'sat': 1, 'on': 1, 'mat': 1}
+```
+
+```python
+# Pattern 3: Grouping items
+scores = [("Sokha", 92), ("Dara", 78), ("Sokha", 88), ("Dara", 85)]
+grouped = {}
+for name, score in scores:
+    if name not in grouped:
+        grouped[name] = []
+    grouped[name].append(score)
+print(grouped)    # {'Sokha': [92, 88], 'Dara': [78, 85]}
+```
+
+## Practice 6A — Word Frequency Counter
+
+```python
+text = input("Enter a sentence: ").lower()
+words = text.split()
+
+# Count each word
+frequency = {}
+for word in words:
+    frequency[word] = frequency.get(word, 0) + 1
+
+# Display sorted by frequency (highest first)
+print(f"\n{'Word':<15} {'Count':>5}")
+print("-" * 22)
+
+sorted_words = sorted(frequency.items(), key=lambda x: x[1], reverse=True)
+for word, count in sorted_words:
+    bar = "█" * count
+    print(f"{word:<15} {count:>5}  {bar}")
+
+print(f"\nUnique words: {len(frequency)}")
+print(f"Total words:  {len(words)}")
+```
+
+## Practice 6B — Contact Book
+
+```python
+contacts = {}
+
+print("=== Contact Book ===")
+print("Commands: add, search, list, delete, quit\n")
+
+while True:
+    cmd = input(">> ").strip().lower()
+
+    if cmd == "add":
+        name = input("  Name: ").strip().title()
+        phone = input("  Phone: ").strip()
+        contacts[name] = phone
+        print(f"  ✅ Added {name}!")
+
+    elif cmd == "search":
+        name = input("  Search name: ").strip().title()
+        phone = contacts.get(name)
+        if phone:
+            print(f"  📞 {name}: {phone}")
+        else:
+            print(f"  ❌ '{name}' not found.")
+
+    elif cmd == "list":
+        if contacts:
+            print(f"\n  {'Name':<15} {'Phone':>12}")
+            print("  " + "-" * 28)
+            for name, phone in sorted(contacts.items()):
+                print(f"  {name:<15} {phone:>12}")
+            print(f"\n  Total: {len(contacts)} contacts")
+        else:
+            print("  📭 No contacts yet.")
+
+    elif cmd == "delete":
+        name = input("  Delete name: ").strip().title()
+        if name in contacts:
+            del contacts[name]
+            print(f"  🗑️ Deleted {name}.")
+        else:
+            print(f"  ❌ '{name}' not found.")
+
+    elif cmd == "quit":
+        print("  Goodbye! 👋")
+        break
+
+    else:
+        print("  ❓ Unknown command.")
+```
+
+---
+
+# Part 7: Nested Structures & Combining Data Types
+
+## Lists of Dictionaries
+
+::: {style="text-align:center; margin-top: 30px;"}
+### The most common pattern: a **list** of **dictionaries** {style="color: #2980b9; font-size: 1.4em;"}
+:::
+
+```python
+students = [
+    {"name": "Sokha", "age": 20, "gpa": 3.75},
+    {"name": "Dara", "age": 21, "gpa": 3.50},
+    {"name": "Chenda", "age": 19, "gpa": 3.90},
+    {"name": "Bopha", "age": 22, "gpa": 3.20},
+]
+
+# Access a specific student
+print(students[0]["name"])     # "Sokha"
+print(students[2]["gpa"])      # 3.9
+
+# Loop through all students
+for student in students:
+    print(f"{student['name']} — GPA: {student['gpa']}")
+```
+
+::: {.callout-note}
+## 💡 Think of it Like a Table!
+Each dictionary is a **row**, each key is a **column**. This is how real databases store data!
+:::
+
+## Dictionary with List Values
+
+```python
+# Each key maps to a list of values
+grades = {
+    "Sokha": [85, 92, 88, 95],
+    "Dara": [78, 82, 75, 80],
+    "Chenda": [92, 95, 98, 90],
+}
+
+# Access Sokha's grades
+print(grades["Sokha"])         # [85, 92, 88, 95]
+print(grades["Sokha"][0])      # 85  (first grade)
+
+# Calculate each student's average
+for name, score_list in grades.items():
+    avg = sum(score_list) / len(score_list)
+    print(f"{name}: avg = {avg:.1f}")
+# Sokha: avg = 90.0
+# Dara: avg = 78.8
+# Chenda: avg = 93.8
+
+# Add a new grade for Sokha
+grades["Sokha"].append(90)
+print(grades["Sokha"])    # [85, 92, 88, 95, 90]
+```
+
+## Nested Dictionaries
+
+```python
+# Dictionary inside a dictionary
+school = {
+    "CS101": {
+        "title": "Intro to Programming",
+        "instructor": "MIN Sothearith",
+        "students": 35,
+        "room": "A201"
+    },
+    "CS201": {
+        "title": "Data Structures",
+        "instructor": "Dr. Sok",
+        "students": 28,
+        "room": "B105"
+    }
+}
+
+# Access nested values
+print(school["CS101"]["title"])        # "Intro to Programming"
+print(school["CS201"]["instructor"])   # "Dr. Sok"
+
+# Loop through courses
+for code, info in school.items():
+    print(f"{code}: {info['title']} ({info['students']} students)")
+```
+
+## Practice 7A — Class Gradebook
+
+```python
+gradebook = [
+    {"name": "Sokha", "scores": [85, 92, 88]},
+    {"name": "Dara", "scores": [78, 65, 72]},
+    {"name": "Chenda", "scores": [95, 98, 92]},
+    {"name": "Bopha", "scores": [88, 82, 90]},
+    {"name": "Vanna", "scores": [60, 55, 68]},
+]
+
+print("=" * 50)
+print(f"{'CLASS GRADEBOOK':^50}")
+print("=" * 50)
+print(f"{'Name':<12} {'Scores':<20} {'Avg':>6} {'Grade':>6}")
+print("-" * 50)
+
+for student in gradebook:
+    name = student["name"]
+    scores = student["scores"]
+    avg = sum(scores) / len(scores)
+
+    # Determine grade
+    if avg >= 90:
+        grade = "A"
+    elif avg >= 80:
+        grade = "B"
+    elif avg >= 70:
+        grade = "C"
+    elif avg >= 60:
+        grade = "D"
+    else:
+        grade = "F"
+
+    scores_str = ", ".join(str(s) for s in scores)
+    print(f"{name:<12} {scores_str:<20} {avg:>6.1f} {grade:>6}")
+
+# Class statistics
+all_avgs = [sum(s["scores"]) / len(s["scores"]) for s in gradebook]
+print("-" * 50)
+print(f"{'Class Average:':<32} {sum(all_avgs)/len(all_avgs):>6.1f}")
+print(f"{'Highest Average:':<32} {max(all_avgs):>6.1f}")
+print(f"{'Lowest Average:':<32} {min(all_avgs):>6.1f}")
+```
+
+---
+
+# Part 8: Full Practice Projects
+
+## Project 1 — Student Management System
+
+```python
+print("=" * 45)
+print("     🎓 Student Management System")
+print("=" * 45)
+
+students = []
+
+while True:
+    print("\n[1] Add Student  [2] View All  [3] Search")
+    print("[4] Statistics   [5] Quit")
+    choice = input("\nChoice: ").strip()
+
+    if choice == "1":
+        name = input("  Name: ").strip().title()
+        sid = input("  ID: ").strip().upper()
+        score = input("  Score: ").strip()
+
+        if not score.isdigit():
+            print("  ❌ Invalid score!")
+            continue
+
+        students.append({
+            "name": name,
+            "id": sid,
+            "score": int(score)
+        })
+        print(f"  ✅ Added {name}!")
+
+    elif choice == "2":
+        if not students:
+            print("  📭 No students yet.")
+            continue
+
+        print(f"\n  {'Name':<15} {'ID':<10} {'Score':>6}")
+        print("  " + "-" * 33)
+        for s in students:
+            print(f"  {s['name']:<15} {s['id']:<10} {s['score']:>6}")
+
+    elif choice == "3":
+        query = input("  Search name: ").strip().lower()
+        found = [s for s in students if query in s["name"].lower()]
+
+        if found:
+            for s in found:
+                print(f"  📋 {s['name']} (ID: {s['id']}) — Score: {s['score']}")
+        else:
+            print("  ❌ No match found.")
+
+    elif choice == "4":
+        if not students:
+            print("  📭 No data.")
+            continue
+
+        scores = [s["score"] for s in students]
+        print(f"\n  Total students: {len(students)}")
+        print(f"  Average score:  {sum(scores)/len(scores):.1f}")
+        print(f"  Highest score:  {max(scores)}")
+        print(f"  Lowest score:   {min(scores)}")
+
+    elif choice == "5":
+        print("  Goodbye! 👋")
+        break
+
+    else:
+        print("  ❓ Invalid choice.")
+```
+
+## Project 2 — Inventory Tracker
+
+```python
+print("=" * 50)
+print("     📦 Simple Inventory Tracker")
+print("=" * 50)
+
+inventory = {}
+
+while True:
+    print("\n[1] Add Item  [2] Update Stock  [3] View All")
+    print("[4] Search    [5] Low Stock Alert  [6] Quit")
+    choice = input("\nChoice: ").strip()
+
+    if choice == "1":
+        name = input("  Item name: ").strip().title()
+        qty = input("  Quantity: ").strip()
+        price = input("  Price ($): ").strip()
+
+        if not qty.isdigit():
+            print("  ❌ Invalid quantity!")
+            continue
+
+        inventory[name] = {
+            "qty": int(qty),
+            "price": float(price)
+        }
+        print(f"  ✅ Added {name}!")
+
+    elif choice == "2":
+        name = input("  Item name: ").strip().title()
+        if name not in inventory:
+            print(f"  ❌ '{name}' not found.")
+            continue
+
+        change = input("  Add/remove how many? (+5 or -3): ").strip()
+        try:
+            inventory[name]["qty"] += int(change)
+            if inventory[name]["qty"] < 0:
+                inventory[name]["qty"] = 0
+            print(f"  ✅ {name} stock: {inventory[name]['qty']}")
+        except ValueError:
+            print("  ❌ Invalid number!")
+
+    elif choice == "3":
+        if not inventory:
+            print("  📭 Inventory is empty.")
+            continue
+
+        print(f"\n  {'Item':<18} {'Qty':>5} {'Price':>8} {'Value':>10}")
+        print("  " + "-" * 43)
+        total_value = 0
+        for name, info in sorted(inventory.items()):
+            value = info["qty"] * info["price"]
+            total_value += value
+            print(f"  {name:<18} {info['qty']:>5} ${info['price']:>7.2f} ${value:>9.2f}")
+        print("  " + "-" * 43)
+        print(f"  {'Total Inventory Value:':>31} ${total_value:>9.2f}")
+
+    elif choice == "4":
+        query = input("  Search: ").strip().lower()
+        found = {k: v for k, v in inventory.items() if query in k.lower()}
+        if found:
+            for name, info in found.items():
+                print(f"  📋 {name}: {info['qty']} units @ ${info['price']:.2f}")
+        else:
+            print("  ❌ No match.")
+
+    elif choice == "5":
+        threshold = 5
+        low = {k: v for k, v in inventory.items() if v["qty"] <= threshold}
+        if low:
+            print(f"\n  ⚠️ Items with {threshold} or fewer units:")
+            for name, info in low.items():
+                print(f"    🔴 {name}: {info['qty']} left")
+        else:
+            print("  ✅ All items are well-stocked!")
+
+    elif choice == "6":
+        print("  Goodbye! 👋")
+        break
+
+    else:
+        print("  ❓ Invalid choice.")
+```
+
+## Project 3 — Quiz Game
+
+```python
+print("=" * 40)
+print("     🧠 Python Quiz Game")
+print("=" * 40)
+
+# Quiz data: list of dictionaries
+quiz = [
+    {
+        "question": "What data type is [1, 2, 3]?",
+        "options": ["A. String", "B. Tuple", "C. List", "D. Dictionary"],
+        "answer": "C"
+    },
+    {
+        "question": "Which bracket is used for dictionaries?",
+        "options": ["A. []", "B. ()", "C. <>", "D. {}"],
+        "answer": "D"
+    },
+    {
+        "question": "What does append() do?",
+        "options": ["A. Removes an item", "B. Adds to the end", "C. Sorts the list", "D. Reverses the list"],
+        "answer": "B"
+    },
+    {
+        "question": "Tuples are ___?",
+        "options": ["A. Mutable", "B. Immutable", "C. Unordered", "D. Empty"],
+        "answer": "B"
+    },
+    {
+        "question": "How do you access dict value safely?",
+        "options": ["A. dict[key]", "B. dict.find(key)", "C. dict.get(key)", "D. dict.value(key)"],
+        "answer": "C"
+    },
+]
+
+score = 0
+total = len(quiz)
+
+for i, q in enumerate(quiz, 1):
+    print(f"\nQuestion {i}/{total}: {q['question']}")
+    for option in q["options"]:
+        print(f"  {option}")
+
+    user_answer = input("\nYour answer (A/B/C/D): ").strip().upper()
+
+    if user_answer == q["answer"]:
+        print("  ✅ Correct!")
+        score += 1
+    else:
+        print(f"  ❌ Wrong! The answer was {q['answer']}.")
+
+# Results
+print("\n" + "=" * 40)
+print(f"  Score: {score}/{total} ({score/total*100:.0f}%)")
+if score == total:
+    print("  🏆 Perfect score! Amazing!")
+elif score >= total * 0.7:
+    print("  👍 Good job! Keep learning!")
+else:
+    print("  📚 Keep practicing! You'll get better!")
+print("=" * 40)
+```
+
+---
+
+## Comparison: List vs Tuple vs Dictionary
+
+| Feature | List `[]` | Tuple `()` | Dictionary `{}` |
+|---------|----------|------------|-----------------|
+| **Ordered** | ✅ Yes | ✅ Yes | ✅ (insertion order) |
+| **Mutable** | ✅ Yes | ❌ No | ✅ Yes |
+| **Duplicates** | ✅ Allowed | ✅ Allowed | ❌ Keys unique |
+| **Access by** | Index `[0]` | Index `[0]` | Key `["name"]` |
+| **Best for** | Collections that change | Fixed data | Key-value lookups |
+| **Example** | `[85, 92, 78]` | `(10, 20)` | `{"name": "Sokha"}` |
+
+::: {.callout-important}
+## 🎯 When to Use Each
+
+- **List** → A collection of similar items (student names, scores, items)
+- **Tuple** → Fixed data that shouldn't change (coordinates, RGB colors, dates)
+- **Dictionary** → Data with labels/names (student profile, settings, config)
+:::
+
+## Summary: What You've Learned
+
+**Lists:**
+
+- Create: `fruits = ["apple", "banana"]`
+- Access: `fruits[0]`, `fruits[-1]`, `fruits[1:3]`
+- Modify: `append()`, `insert()`, `remove()`, `pop()`, `sort()`
+- Loop: `for item in list:`, `for i, item in enumerate(list):`
+
+**Tuples:**
+
+- Create: `point = (10, 20)`
+- Access: `point[0]`, `point[1]`
+- Unpack: `x, y = point`
+- Immutable — cannot change after creation
+
+**Dictionaries:**
+
+- Create: `student = {"name": "Sokha", "age": 20}`
+- Access: `student["name"]` or `student.get("name")`
+- Modify: `student["age"] = 21`, `student.update({...})`
+- Loop: `for key, value in dict.items():`
+
+::: {.callout-tip}
+## 🚀 Key Takeaways
+- **Lists** are your go-to for ordered collections — use `append()` and `for` loops constantly
+- **Tuples** are for fixed data — use unpacking to make code cleaner
+- **Dictionaries** are for labeled data — use `.get()` for safe access
+- **Nested structures** (list of dicts) are how real programs organize data
+- Always use `in` to check membership before accessing: `if key in dict:`
+:::
+
+## Common Mistakes to Avoid
+
+```python
+# ❌ Mistake 1: Modifying a list while looping over it
+numbers = [1, 2, 3, 4, 5]
+for n in numbers:
+    if n % 2 == 0:
+        numbers.remove(n)    # ❌ Skips items!
+# ✅ Use a new list instead:
+numbers = [n for n in numbers if n % 2 != 0]
+
+# ❌ Mistake 2: Using dict["key"] without checking
+student = {"name": "Sokha"}
+print(student["email"])          # ❌ KeyError!
+print(student.get("email", "N/A"))  # ✅ Safe!
+
+# ❌ Mistake 3: Confusing append and extend
+items = [1, 2, 3]
+items.append([4, 5])     # ❌ [1, 2, 3, [4, 5]]
+items.extend([4, 5])     # ✅ [1, 2, 3, 4, 5]
+
+# ❌ Mistake 4: Forgetting the comma in single-item tuple
+t = (42)     # ❌ This is just the integer 42!
+t = (42,)    # ✅ This is a tuple!
+
+# ❌ Mistake 5: Using a list as a dictionary key
+d = {[1, 2]: "hello"}    # ❌ TypeError! Lists are mutable
+d = {(1, 2): "hello"}    # ✅ Tuples can be keys!
+```
+
+## Quick Reference Card
+
+```python
+# --- LISTS ---
+fruits = ["apple", "banana", "cherry"]
+fruits.append("durian")        # Add to end
+fruits.insert(1, "avocado")    # Add at position
+fruits.extend(["fig", "grape"])# Add multiple
+fruits.remove("banana")        # Remove by value
+fruits.pop()                   # Remove last
+fruits.sort()                  # Sort in place
+fruits.reverse()               # Reverse in place
+len(fruits)                    # Count items
+"apple" in fruits              # Check membership
+
+# --- TUPLES ---
+point = (10, 20)
+x, y = point                  # Unpack
+point.count(10)                # Count value
+point.index(20)                # Find position
+list(point)                    # Convert to list
+
+# --- DICTIONARIES ---
+d = {"name": "Sokha", "age": 20}
+d["major"] = "CS"             # Add/update
+d.get("email", "N/A")         # Safe access
+d.pop("age")                  # Remove key
+d.update({"gpa": 3.75})       # Update multiple
+d.keys()                      # All keys
+d.values()                    # All values
+d.items()                     # All key-value pairs
+"name" in d                   # Check key exists
+```
+
+## Next Class
+
+Next class we will dive deeper into **Functions** — writing your own reusable blocks of code!
+
+::: {.callout-tip}
+## 🚀 Get Ready
+Functions + Data structures = powerful programs! Imagine writing a function that calculates the average of ANY list, or a function that searches a dictionary of students.
+
+**Practice at home:** Write a program that:
+
+- Stores a shopping list and calculates the total price
+- Creates a phonebook using a dictionary with add/search/delete
+- Takes a list of scores and returns a dictionary with statistics (min, max, avg, count)
+:::

@@ -1,0 +1,4 @@
+- source: session1516.qmd
+  quarto-pub:
+    - id: session1516
+      url: https://min.quarto.pub/session1516

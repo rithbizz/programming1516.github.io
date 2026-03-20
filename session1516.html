@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="session1516_files/libs/clipboard/clipboard.min.js"></script>
+<script src="session1516_files/libs/quarto-html/tabby.min.js"></script>
+<script src="session1516_files/libs/quarto-html/popper.min.js"></script>
+<script src="session1516_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="session1516_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="session1516_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="session1516_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <title>session1516</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="session1516_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="session1516_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="session1516_files/libs/revealjs/dist/theme/quarto-77fa2cb3bc1469902a4e0e907f0733e5.css">
+  <link href="session1516_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="session1516_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="session1516_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="session1516_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<style>
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: #2980b9;
+}
+.reveal {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+</style>
+<div style="text-align:center; margin-top: 40px; line-height: 1.4;">
+<p><img src="https://pelprek.sgp1.digitaloceanspaces.com/banner/3489/148825024520275.png" alt="PPIU Logo" style="width: 400px; margin-bottom: 20px;"></p>
+<h1 style="font-size: 3em; font-weight: 700; color: #2980b9; margin-bottom: 10px;">
+Programming Language I
+</h1>
+<h2 style="font-size: 1.6em; font-weight: 500; color: #555;">
+Lists, Tuples &amp; Dictionaries
+</h2>
+<div style="border-bottom: 4px solid #e74c3c; width: 45%; margin: 18px auto;">
+
+</div>
+<h3 style="margin-top: 25px; font-weight: 700; color: #050E3C">
+By: MIN Sothearith
+</h3>
+<h4 style="font-weight: 700; color: #666;">
+Phnom Penh International University
+</h4>
+</div>
+</section>
+<section id="welcome-back" class="slide level2">
+<h2>Welcome Back! 🎉</h2>
+<div style="text-align:center; margin-top: 40px;">
+<h3 style="color: #2980b9;">
+Organizing Data in Python
+</h3>
+<p style="font-size: 1.4em; margin-top: 50px;">
+Today we learn how to <strong>store</strong>, <strong>organize</strong>, and <strong>access</strong> collections of data using Python’s most important data structures! 📦
+</p>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 Why It Matters</strong></p>
+</div>
+<div class="callout-content">
+<p>Real programs almost never work with just one piece of data. You need to store student names, scores, product prices, settings — <strong>collections</strong> of related information. Lists, tuples, and dictionaries are the tools for this!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="todays-plan" class="slide level2 scrollable">
+<h2>Today’s Plan</h2>
+<p><strong>Lists, Tuples &amp; Dictionaries — 3 Hours:</strong></p>
+<ol type="1">
+<li><strong>Part 1</strong> — Lists: Creating, Accessing &amp; Slicing</li>
+<li><strong>Part 2</strong> — List Methods: Adding, Removing &amp; Sorting</li>
+<li><strong>Part 3</strong> — Looping Through Lists</li>
+<li><strong>Part 4</strong> — Tuples: Immutable Sequences</li>
+<li><strong>Part 5</strong> — Dictionaries: Key-Value Pairs</li>
+<li><strong>Part 6</strong> — Dictionary Methods &amp; Looping</li>
+<li><strong>Part 7</strong> — Nested Structures &amp; Combining Data Types</li>
+<li><strong>Part 8</strong> — Practice Projects &amp; Challenges</li>
+</ol>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>⏱️ Time:</strong> ~3 hours | <strong>📝 Goal:</strong> Master Python’s core data structures for organizing information!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning Objectives</h2>
+<p><strong>By the end of this class, you will:</strong></p>
+<ul>
+<li>Create and manipulate <strong>lists</strong> (add, remove, sort, slice)</li>
+<li>Loop through lists using <code>for</code> loops and <code>enumerate()</code></li>
+<li>Understand <strong>tuples</strong> and when to use them instead of lists</li>
+<li>Create and use <strong>dictionaries</strong> for key-value data</li>
+<li>Access, add, update, and delete dictionary entries</li>
+<li>Loop through dictionaries using <code>.keys()</code>, <code>.values()</code>, <code>.items()</code></li>
+<li>Combine lists, tuples, and dictionaries in <strong>nested structures</strong></li>
+<li>Build real programs using these data structures</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>🎯 Hands-On Learning</strong></p>
+</div>
+<div class="callout-content">
+<p>Every concept comes with live examples and practice exercises you will write yourself!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section>
+<section>
+<section id="part-1-lists-creating-accessing-slicing" class="title-slide slide level1 center">
+<h1>Part 1: Lists — Creating, Accessing &amp; Slicing</h1>
+
+</section>
+<section id="what-is-a-list" class="slide level2">
+<h2>What is a List?</h2>
+<h3 style="color: #2980b9; font-size: 1.4em;" id="a-list-is-an-ordered-mutable-collection-of-items-enclosed-in-square-brackets">A <strong>list</strong> is an ordered, mutable collection of items enclosed in square brackets <code>[]</code></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Creating lists</span></span>
+<span id="cb1-2"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb1-3"><a href=""></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">88</span>]</span>
+<span id="cb1-4"><a href=""></a>mixed <span class="op">=</span> [<span class="st">"Sokha"</span>, <span class="dv">20</span>, <span class="fl">3.75</span>, <span class="va">True</span>]   <span class="co"># Can mix types!</span></span>
+<span id="cb1-5"><a href=""></a>empty <span class="op">=</span> []                            <span class="co"># Empty list</span></span>
+<span id="cb1-6"><a href=""></a></span>
+<span id="cb1-7"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'banana', 'cherry']</span></span>
+<span id="cb1-8"><a href=""></a><span class="bu">print</span>(scores)    <span class="co"># [85, 92, 78, 95, 88]</span></span>
+<span id="cb1-9"><a href=""></a><span class="bu">print</span>(<span class="bu">len</span>(fruits))  <span class="co"># 3</span></span>
+<span id="cb1-10"><a href=""></a><span class="bu">print</span>(<span class="bu">len</span>(scores))  <span class="co"># 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 Key Facts About Lists</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Ordered</strong> — items stay in the order you put them</li>
+<li><strong>Mutable</strong> — you CAN change items after creation (unlike strings!)</li>
+<li><strong>Allow duplicates</strong> — <code>[1, 2, 2, 3]</code> is perfectly valid</li>
+<li><strong>Can mix types</strong> — but usually you keep the same type</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-list-items-indexing" class="slide level2">
+<h2>Accessing List Items (Indexing)</h2>
+<p>Just like strings, each item has a <strong>position</strong> (index) starting from <code>0</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"durian"</span>, <span class="st">"elderberry"</span>]</span>
+<span id="cb2-2"><a href=""></a><span class="co">#          0         1         2         3          4</span></span>
+<span id="cb2-3"><a href=""></a><span class="co">#         -5        -4        -3        -2         -1</span></span>
+<span id="cb2-4"><a href=""></a></span>
+<span id="cb2-5"><a href=""></a><span class="bu">print</span>(fruits[<span class="dv">0</span>])     <span class="co"># "apple"     (first item)</span></span>
+<span id="cb2-6"><a href=""></a><span class="bu">print</span>(fruits[<span class="dv">2</span>])     <span class="co"># "cherry"    (third item)</span></span>
+<span id="cb2-7"><a href=""></a><span class="bu">print</span>(fruits[<span class="op">-</span><span class="dv">1</span>])    <span class="co"># "elderberry" (last item)</span></span>
+<span id="cb2-8"><a href=""></a><span class="bu">print</span>(fruits[<span class="op">-</span><span class="dv">2</span>])    <span class="co"># "durian"    (second from last)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># ❌ What happens if you go out of range?</span></span>
+<span id="cb3-2"><a href=""></a><span class="bu">print</span>(fruits[<span class="dv">10</span>])    <span class="co"># IndexError: list index out of range</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>🎯 Same Rules as Strings!</strong></p>
+</div>
+<div class="callout-content">
+<p>Index starts at <strong>0</strong>. Last item is <code>list[-1]</code>. Going out of range causes an <code>IndexError</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="list-slicing" class="slide level2">
+<h2>List Slicing</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"durian"</span>, <span class="st">"elderberry"</span>]</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="co"># Slicing syntax: list[start:stop]</span></span>
+<span id="cb4-4"><a href=""></a><span class="bu">print</span>(fruits[<span class="dv">1</span>:<span class="dv">4</span>])    <span class="co"># ['banana', 'cherry', 'durian']</span></span>
+<span id="cb4-5"><a href=""></a><span class="bu">print</span>(fruits[:<span class="dv">3</span>])     <span class="co"># ['apple', 'banana', 'cherry']</span></span>
+<span id="cb4-6"><a href=""></a><span class="bu">print</span>(fruits[<span class="dv">2</span>:])     <span class="co"># ['cherry', 'durian', 'elderberry']</span></span>
+<span id="cb4-7"><a href=""></a><span class="bu">print</span>(fruits[<span class="op">-</span><span class="dv">3</span>:])    <span class="co"># ['cherry', 'durian', 'elderberry']</span></span>
+<span id="cb4-8"><a href=""></a></span>
+<span id="cb4-9"><a href=""></a><span class="co"># With step</span></span>
+<span id="cb4-10"><a href=""></a><span class="bu">print</span>(fruits[::<span class="dv">2</span>])    <span class="co"># ['apple', 'cherry', 'elderberry']</span></span>
+<span id="cb4-11"><a href=""></a><span class="bu">print</span>(fruits[::<span class="op">-</span><span class="dv">1</span>])   <span class="co"># ['elderberry', 'durian', 'cherry', 'banana', 'apple']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 Slicing Rule</strong></p>
+</div>
+<div class="callout-content">
+<p>Same as strings! <code>list[start:stop]</code> gives items from <code>start</code> up to but <strong>NOT including</strong> <code>stop</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lists-are-mutable-unlike-strings" class="slide level2">
+<h2>Lists are Mutable! (Unlike Strings)</h2>
+<h3 style="color: #27ae60; font-size: 1.4em;" id="mutable-means-you-can-change-items-after-creating-the-list"><strong>Mutable</strong> means you <strong>CAN change</strong> items after creating the list</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb5-2"><a href=""></a></span>
+<span id="cb5-3"><a href=""></a><span class="co"># ✅ Change an item directly</span></span>
+<span id="cb5-4"><a href=""></a>fruits[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"blueberry"</span></span>
+<span id="cb5-5"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'blueberry', 'cherry']</span></span>
+<span id="cb5-6"><a href=""></a></span>
+<span id="cb5-7"><a href=""></a><span class="co"># ✅ Change a slice</span></span>
+<span id="cb5-8"><a href=""></a>fruits[<span class="dv">0</span>:<span class="dv">2</span>] <span class="op">=</span> [<span class="st">"avocado"</span>, <span class="st">"blackberry"</span>]</span>
+<span id="cb5-9"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['avocado', 'blackberry', 'cherry']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>⚠️ Remember the Difference!</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Strings</strong> are immutable → <code>name[0] = "J"</code> gives an ERROR</p>
+<p><strong>Lists</strong> are mutable → <code>fruits[0] = "avocado"</code> works perfectly!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-1a-list-basics" class="slide level2">
+<h2>Practice 1A — List Basics</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># Create a list of 5 student names</span></span>
+<span id="cb6-2"><a href=""></a>students <span class="op">=</span> [<span class="st">"Sokha"</span>, <span class="st">"Dara"</span>, <span class="st">"Chenda"</span>, <span class="st">"Bopha"</span>, <span class="st">"Vanna"</span>]</span>
+<span id="cb6-3"><a href=""></a></span>
+<span id="cb6-4"><a href=""></a><span class="co"># Print the list and its length</span></span>
+<span id="cb6-5"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Students: </span><span class="sc">{</span>students<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-6"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Total: </span><span class="sc">{</span><span class="bu">len</span>(students)<span class="sc">}</span><span class="ss"> students"</span>)</span>
+<span id="cb6-7"><a href=""></a></span>
+<span id="cb6-8"><a href=""></a><span class="co"># Access specific students</span></span>
+<span id="cb6-9"><a href=""></a><span class="bu">print</span>(<span class="ss">f"First student: </span><span class="sc">{</span>students[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-10"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Last student: </span><span class="sc">{</span>students[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-11"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Middle three: </span><span class="sc">{</span>students[<span class="dv">1</span>:<span class="dv">4</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-12"><a href=""></a></span>
+<span id="cb6-13"><a href=""></a><span class="co"># Change a student name</span></span>
+<span id="cb6-14"><a href=""></a>students[<span class="dv">2</span>] <span class="op">=</span> <span class="st">"Chanthy"</span></span>
+<span id="cb6-15"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Updated list: </span><span class="sc">{</span>students<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-1b-score-analysis" class="slide level2">
+<h2>Practice 1B — Score Analysis</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">88</span>, <span class="dv">72</span>, <span class="dv">90</span>, <span class="dv">68</span>, <span class="dv">84</span>, <span class="dv">96</span>]</span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a><span class="bu">print</span>(<span class="ss">f"All scores:    </span><span class="sc">{</span>scores<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Total scores:  </span><span class="sc">{</span><span class="bu">len</span>(scores)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-5"><a href=""></a><span class="bu">print</span>(<span class="ss">f"First score:   </span><span class="sc">{</span>scores[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-6"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Last score:    </span><span class="sc">{</span>scores[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-7"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Top 3 scores:  </span><span class="sc">{</span>scores[<span class="op">-</span><span class="dv">3</span>:]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-8"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Reversed:      </span><span class="sc">{</span>scores[::<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-9"><a href=""></a></span>
+<span id="cb7-10"><a href=""></a><span class="co"># Check if a score exists</span></span>
+<span id="cb7-11"><a href=""></a><span class="cf">if</span> <span class="dv">95</span> <span class="kw">in</span> scores:</span>
+<span id="cb7-12"><a href=""></a>    <span class="bu">print</span>(<span class="st">"95 is in the list!"</span>)</span>
+<span id="cb7-13"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Position: index </span><span class="sc">{</span>scores<span class="sc">.</span>index(<span class="dv">95</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-2-list-methods-adding-removing-sorting" class="title-slide slide level1 center">
+<h1>Part 2: List Methods — Adding, Removing &amp; Sorting</h1>
+
+</section>
+<section id="adding-items-to-a-list" class="slide level2">
+<h2>Adding Items to a List</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>]</span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a><span class="co"># append() — add ONE item to the </span><span class="re">END</span></span>
+<span id="cb8-4"><a href=""></a>fruits.append(<span class="st">"cherry"</span>)</span>
+<span id="cb8-5"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'banana', 'cherry']</span></span>
+<span id="cb8-6"><a href=""></a></span>
+<span id="cb8-7"><a href=""></a><span class="co"># insert() — add ONE item at a SPECIFIC position</span></span>
+<span id="cb8-8"><a href=""></a>fruits.insert(<span class="dv">1</span>, <span class="st">"avocado"</span>)</span>
+<span id="cb8-9"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'avocado', 'banana', 'cherry']</span></span>
+<span id="cb8-10"><a href=""></a></span>
+<span id="cb8-11"><a href=""></a><span class="co"># extend() — add MULTIPLE items to the </span><span class="re">END</span></span>
+<span id="cb8-12"><a href=""></a>fruits.extend([<span class="st">"durian"</span>, <span class="st">"elderberry"</span>])</span>
+<span id="cb8-13"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'avocado', 'banana', 'cherry', 'durian', 'elderberry']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>🎯 append() vs extend()</strong></p>
+</div>
+<div class="callout-content">
+<p><code>append()</code> adds <strong>one item</strong> (even if it’s a list — it adds the whole list as one item!)</p>
+<p><code>extend()</code> adds <strong>each item</strong> from another list individually.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="append-vs-extend-be-careful" class="slide level2">
+<h2>append() vs extend() — Be Careful!</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb9-2"><a href=""></a>list2 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a><span class="co"># append a list → adds the LIST as one item</span></span>
+<span id="cb9-5"><a href=""></a>list1.append([<span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb9-6"><a href=""></a><span class="bu">print</span>(list1)    <span class="co"># [1, 2, 3, [4, 5]]  ← nested list!</span></span>
+<span id="cb9-7"><a href=""></a></span>
+<span id="cb9-8"><a href=""></a><span class="co"># extend with a list → adds EACH item</span></span>
+<span id="cb9-9"><a href=""></a>list2.extend([<span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb9-10"><a href=""></a><span class="bu">print</span>(list2)    <span class="co"># [1, 2, 3, 4, 5]    ← flat list!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># You can also use + to combine lists (creates a NEW list)</span></span>
+<span id="cb10-2"><a href=""></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb10-3"><a href=""></a>b <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb10-4"><a href=""></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb10-5"><a href=""></a><span class="bu">print</span>(c)    <span class="co"># [1, 2, 3, 4, 5, 6]</span></span>
+<span id="cb10-6"><a href=""></a><span class="bu">print</span>(a)    <span class="co"># [1, 2, 3]  ← original unchanged!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="removing-items-from-a-list" class="slide level2">
+<h2>Removing Items from a List</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"banana"</span>, <span class="st">"durian"</span>]</span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a><span class="co"># remove() — remove the FIRST occurrence of a value</span></span>
+<span id="cb11-4"><a href=""></a>fruits.remove(<span class="st">"banana"</span>)</span>
+<span id="cb11-5"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'cherry', 'banana', 'durian']</span></span>
+<span id="cb11-6"><a href=""></a></span>
+<span id="cb11-7"><a href=""></a><span class="co"># pop() — remove and RETURN item at a position (default: last)</span></span>
+<span id="cb11-8"><a href=""></a>last <span class="op">=</span> fruits.pop()</span>
+<span id="cb11-9"><a href=""></a><span class="bu">print</span>(last)      <span class="co"># "durian"</span></span>
+<span id="cb11-10"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'cherry', 'banana']</span></span>
+<span id="cb11-11"><a href=""></a></span>
+<span id="cb11-12"><a href=""></a>second <span class="op">=</span> fruits.pop(<span class="dv">1</span>)</span>
+<span id="cb11-13"><a href=""></a><span class="bu">print</span>(second)    <span class="co"># "cherry"</span></span>
+<span id="cb11-14"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['apple', 'banana']</span></span>
+<span id="cb11-15"><a href=""></a></span>
+<span id="cb11-16"><a href=""></a><span class="co"># del — delete by index</span></span>
+<span id="cb11-17"><a href=""></a><span class="kw">del</span> fruits[<span class="dv">0</span>]</span>
+<span id="cb11-18"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># ['banana']</span></span>
+<span id="cb11-19"><a href=""></a></span>
+<span id="cb11-20"><a href=""></a><span class="co"># clear() — remove ALL items</span></span>
+<span id="cb11-21"><a href=""></a>fruits.clear()</span>
+<span id="cb11-22"><a href=""></a><span class="bu">print</span>(fruits)    <span class="co"># []</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>⚠️ Common Error</strong></p>
+</div>
+<div class="callout-content">
+<p><code>remove()</code> raises a <strong>ValueError</strong> if the item is not in the list! Check first with <code>if item in list:</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sorting-lists" class="slide level2">
+<h2>Sorting Lists</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>numbers <span class="op">=</span> [<span class="dv">42</span>, <span class="dv">15</span>, <span class="dv">88</span>, <span class="dv">3</span>, <span class="dv">67</span>, <span class="dv">23</span>]</span>
+<span id="cb12-2"><a href=""></a></span>
+<span id="cb12-3"><a href=""></a><span class="co"># sort() — sorts IN PLACE (changes the original list)</span></span>
+<span id="cb12-4"><a href=""></a>numbers.sort()</span>
+<span id="cb12-5"><a href=""></a><span class="bu">print</span>(numbers)    <span class="co"># [3, 15, 23, 42, 67, 88]</span></span>
+<span id="cb12-6"><a href=""></a></span>
+<span id="cb12-7"><a href=""></a><span class="co"># Sort in reverse order</span></span>
+<span id="cb12-8"><a href=""></a>numbers.sort(reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-9"><a href=""></a><span class="bu">print</span>(numbers)    <span class="co"># [88, 67, 42, 23, 15, 3]</span></span>
+<span id="cb12-10"><a href=""></a></span>
+<span id="cb12-11"><a href=""></a><span class="co"># sorted() — returns a NEW sorted list (original unchanged)</span></span>
+<span id="cb12-12"><a href=""></a>original <span class="op">=</span> [<span class="dv">42</span>, <span class="dv">15</span>, <span class="dv">88</span>, <span class="dv">3</span>, <span class="dv">67</span>]</span>
+<span id="cb12-13"><a href=""></a>new_sorted <span class="op">=</span> <span class="bu">sorted</span>(original)</span>
+<span id="cb12-14"><a href=""></a><span class="bu">print</span>(original)     <span class="co"># [42, 15, 88, 3, 67]  ← unchanged!</span></span>
+<span id="cb12-15"><a href=""></a><span class="bu">print</span>(new_sorted)   <span class="co"># [3, 15, 42, 67, 88]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># Sort strings alphabetically</span></span>
+<span id="cb13-2"><a href=""></a>names <span class="op">=</span> [<span class="st">"Chenda"</span>, <span class="st">"Sokha"</span>, <span class="st">"Ary"</span>, <span class="st">"Bopha"</span>, <span class="st">"Dara"</span>]</span>
+<span id="cb13-3"><a href=""></a>names.sort()</span>
+<span id="cb13-4"><a href=""></a><span class="bu">print</span>(names)    <span class="co"># ['Ary', 'Bopha', 'Chenda', 'Dara', 'Sokha']</span></span>
+<span id="cb13-5"><a href=""></a></span>
+<span id="cb13-6"><a href=""></a><span class="co"># reverse() — reverses the order (NOT sorting!)</span></span>
+<span id="cb13-7"><a href=""></a>names.reverse()</span>
+<span id="cb13-8"><a href=""></a><span class="bu">print</span>(names)    <span class="co"># ['Sokha', 'Dara', 'Chenda', 'Bopha', 'Ary']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="other-useful-list-operations" class="slide level2">
+<h2>Other Useful List Operations</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">20</span>]</span>
+<span id="cb14-2"><a href=""></a></span>
+<span id="cb14-3"><a href=""></a><span class="co"># count() — how many times does a value appear?</span></span>
+<span id="cb14-4"><a href=""></a><span class="bu">print</span>(numbers.count(<span class="dv">20</span>))     <span class="co"># 3</span></span>
+<span id="cb14-5"><a href=""></a></span>
+<span id="cb14-6"><a href=""></a><span class="co"># index() — what position is the FIRST occurrence?</span></span>
+<span id="cb14-7"><a href=""></a><span class="bu">print</span>(numbers.index(<span class="dv">30</span>))     <span class="co"># 2</span></span>
+<span id="cb14-8"><a href=""></a></span>
+<span id="cb14-9"><a href=""></a><span class="co"># min(), max(), sum() — built-in functions</span></span>
+<span id="cb14-10"><a href=""></a><span class="bu">print</span>(<span class="bu">min</span>(numbers))    <span class="co"># 10</span></span>
+<span id="cb14-11"><a href=""></a><span class="bu">print</span>(<span class="bu">max</span>(numbers))    <span class="co"># 40</span></span>
+<span id="cb14-12"><a href=""></a><span class="bu">print</span>(<span class="bu">sum</span>(numbers))    <span class="co"># 140</span></span>
+<span id="cb14-13"><a href=""></a></span>
+<span id="cb14-14"><a href=""></a><span class="co"># Average</span></span>
+<span id="cb14-15"><a href=""></a>average <span class="op">=</span> <span class="bu">sum</span>(numbers) <span class="op">/</span> <span class="bu">len</span>(numbers)</span>
+<span id="cb14-16"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.1f}</span><span class="ss">"</span>)   <span class="co"># Average: 23.3</span></span>
+<span id="cb14-17"><a href=""></a></span>
+<span id="cb14-18"><a href=""></a><span class="co"># copy() — make a copy of the list</span></span>
+<span id="cb14-19"><a href=""></a>backup <span class="op">=</span> numbers.copy()</span>
+<span id="cb14-20"><a href=""></a>backup[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">999</span></span>
+<span id="cb14-21"><a href=""></a><span class="bu">print</span>(numbers)    <span class="co"># [10, 20, 30, 20, 40, 20]  ← original safe!</span></span>
+<span id="cb14-22"><a href=""></a><span class="bu">print</span>(backup)     <span class="co"># [999, 20, 30, 20, 40, 20]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="summary-table-list-methods" class="slide level2">
+<h2>Summary Table — List Methods</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 43%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>append(x)</code></td>
+<td>Add <code>x</code> to end</td>
+<td><code>[1,2].append(3)</code> → <code>[1,2,3]</code></td>
+</tr>
+<tr class="even">
+<td><code>insert(i, x)</code></td>
+<td>Add <code>x</code> at position <code>i</code></td>
+<td><code>[1,3].insert(1, 2)</code> → <code>[1,2,3]</code></td>
+</tr>
+<tr class="odd">
+<td><code>extend(list)</code></td>
+<td>Add all items from another list</td>
+<td><code>[1].extend([2,3])</code> → <code>[1,2,3]</code></td>
+</tr>
+<tr class="even">
+<td><code>remove(x)</code></td>
+<td>Remove first <code>x</code></td>
+<td><code>[1,2,2].remove(2)</code> → <code>[1,2]</code></td>
+</tr>
+<tr class="odd">
+<td><code>pop(i)</code></td>
+<td>Remove &amp; return item at <code>i</code></td>
+<td><code>[1,2,3].pop(1)</code> → returns <code>2</code></td>
+</tr>
+<tr class="even">
+<td><code>clear()</code></td>
+<td>Remove all items</td>
+<td><code>[1,2,3].clear()</code> → <code>[]</code></td>
+</tr>
+<tr class="odd">
+<td><code>sort()</code></td>
+<td>Sort in place</td>
+<td><code>[3,1,2].sort()</code> → <code>[1,2,3]</code></td>
+</tr>
+<tr class="even">
+<td><code>reverse()</code></td>
+<td>Reverse in place</td>
+<td><code>[1,2,3].reverse()</code> → <code>[3,2,1]</code></td>
+</tr>
+<tr class="odd">
+<td><code>count(x)</code></td>
+<td>Count occurrences of <code>x</code></td>
+<td><code>[1,2,2].count(2)</code> → <code>2</code></td>
+</tr>
+<tr class="even">
+<td><code>index(x)</code></td>
+<td>Find position of first <code>x</code></td>
+<td><code>[10,20,30].index(20)</code> → <code>1</code></td>
+</tr>
+<tr class="odd">
+<td><code>copy()</code></td>
+<td>Make a shallow copy</td>
+<td><code>backup = nums.copy()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="practice-2a-shopping-list-manager" class="slide level2">
+<h2>Practice 2A — Shopping List Manager</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>shopping <span class="op">=</span> []</span>
+<span id="cb15-2"><a href=""></a></span>
+<span id="cb15-3"><a href=""></a><span class="co"># Build the list</span></span>
+<span id="cb15-4"><a href=""></a>shopping.append(<span class="st">"Rice"</span>)</span>
+<span id="cb15-5"><a href=""></a>shopping.append(<span class="st">"Eggs"</span>)</span>
+<span id="cb15-6"><a href=""></a>shopping.append(<span class="st">"Milk"</span>)</span>
+<span id="cb15-7"><a href=""></a>shopping.append(<span class="st">"Bread"</span>)</span>
+<span id="cb15-8"><a href=""></a>shopping.append(<span class="st">"Fish"</span>)</span>
+<span id="cb15-9"><a href=""></a></span>
+<span id="cb15-10"><a href=""></a><span class="bu">print</span>(<span class="st">"=== Shopping List ==="</span>)</span>
+<span id="cb15-11"><a href=""></a><span class="cf">for</span> i, item <span class="kw">in</span> <span class="bu">enumerate</span>(shopping, <span class="dv">1</span>):</span>
+<span id="cb15-12"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">. </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-13"><a href=""></a></span>
+<span id="cb15-14"><a href=""></a><span class="co"># Oops, forgot something! Insert at position 2</span></span>
+<span id="cb15-15"><a href=""></a>shopping.insert(<span class="dv">2</span>, <span class="st">"Vegetables"</span>)</span>
+<span id="cb15-16"><a href=""></a></span>
+<span id="cb15-17"><a href=""></a><span class="co"># Don't need bread anymore</span></span>
+<span id="cb15-18"><a href=""></a>shopping.remove(<span class="st">"Bread"</span>)</span>
+<span id="cb15-19"><a href=""></a></span>
+<span id="cb15-20"><a href=""></a><span class="co"># Sort alphabetically</span></span>
+<span id="cb15-21"><a href=""></a>shopping.sort()</span>
+<span id="cb15-22"><a href=""></a></span>
+<span id="cb15-23"><a href=""></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== Updated List ==="</span>)</span>
+<span id="cb15-24"><a href=""></a><span class="cf">for</span> i, item <span class="kw">in</span> <span class="bu">enumerate</span>(shopping, <span class="dv">1</span>):</span>
+<span id="cb15-25"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">. </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-26"><a href=""></a></span>
+<span id="cb15-27"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total items: </span><span class="sc">{</span><span class="bu">len</span>(shopping)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-2b-grade-calculator" class="slide level2">
+<h2>Practice 2B — Grade Calculator</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="bu">print</span>(<span class="st">"=== Grade Calculator ==="</span>)</span>
+<span id="cb16-2"><a href=""></a><span class="bu">print</span>(<span class="st">"Enter scores (type 'done' to finish):</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb16-3"><a href=""></a></span>
+<span id="cb16-4"><a href=""></a>scores <span class="op">=</span> []</span>
+<span id="cb16-5"><a href=""></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb16-6"><a href=""></a>    entry <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Score: "</span>).strip()</span>
+<span id="cb16-7"><a href=""></a>    <span class="cf">if</span> entry.lower() <span class="op">==</span> <span class="st">"done"</span>:</span>
+<span id="cb16-8"><a href=""></a>        <span class="cf">break</span></span>
+<span id="cb16-9"><a href=""></a>    <span class="cf">if</span> entry.isdigit():</span>
+<span id="cb16-10"><a href=""></a>        scores.append(<span class="bu">int</span>(entry))</span>
+<span id="cb16-11"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb16-12"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  ❌ Please enter a number or 'done'"</span>)</span>
+<span id="cb16-13"><a href=""></a></span>
+<span id="cb16-14"><a href=""></a><span class="cf">if</span> <span class="bu">len</span>(scores) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb16-15"><a href=""></a>    scores.sort(reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-16"><a href=""></a></span>
+<span id="cb16-17"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">All scores:  </span><span class="sc">{</span>scores<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-18"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Highest:     </span><span class="sc">{</span><span class="bu">max</span>(scores)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-19"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Lowest:      </span><span class="sc">{</span><span class="bu">min</span>(scores)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-20"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Average:     </span><span class="sc">{</span><span class="bu">sum</span>(scores) <span class="op">/</span> <span class="bu">len</span>(scores)<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb16-21"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Total:       </span><span class="sc">{</span><span class="bu">sum</span>(scores)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-22"><a href=""></a></span>
+<span id="cb16-23"><a href=""></a>    <span class="co"># Count grades</span></span>
+<span id="cb16-24"><a href=""></a>    a_count <span class="op">=</span> <span class="bu">sum</span>(<span class="dv">1</span> <span class="cf">for</span> s <span class="kw">in</span> scores <span class="cf">if</span> s <span class="op">&gt;=</span> <span class="dv">90</span>)</span>
+<span id="cb16-25"><a href=""></a>    b_count <span class="op">=</span> <span class="bu">sum</span>(<span class="dv">1</span> <span class="cf">for</span> s <span class="kw">in</span> scores <span class="cf">if</span> <span class="dv">80</span> <span class="op">&lt;=</span> s <span class="op">&lt;</span> <span class="dv">90</span>)</span>
+<span id="cb16-26"><a href=""></a>    c_count <span class="op">=</span> <span class="bu">sum</span>(<span class="dv">1</span> <span class="cf">for</span> s <span class="kw">in</span> scores <span class="cf">if</span> <span class="dv">70</span> <span class="op">&lt;=</span> s <span class="op">&lt;</span> <span class="dv">80</span>)</span>
+<span id="cb16-27"><a href=""></a>    f_count <span class="op">=</span> <span class="bu">sum</span>(<span class="dv">1</span> <span class="cf">for</span> s <span class="kw">in</span> scores <span class="cf">if</span> s <span class="op">&lt;</span> <span class="dv">70</span>)</span>
+<span id="cb16-28"><a href=""></a></span>
+<span id="cb16-29"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Grade A (90+): </span><span class="sc">{</span>a_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-30"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Grade B (80-89): </span><span class="sc">{</span>b_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-31"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Grade C (70-79): </span><span class="sc">{</span>c_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-32"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Grade F (&lt;70): </span><span class="sc">{</span>f_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-33"><a href=""></a><span class="cf">else</span>:</span>
+<span id="cb16-34"><a href=""></a>    <span class="bu">print</span>(<span class="st">"No scores entered."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-3-looping-through-lists" class="title-slide slide level1 center">
+<h1>Part 3: Looping Through Lists</h1>
+
+</section>
+<section id="for-loop-with-lists" class="slide level2">
+<h2><code>for</code> Loop with Lists</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"durian"</span>]</span>
+<span id="cb17-2"><a href=""></a></span>
+<span id="cb17-3"><a href=""></a><span class="co"># Simple loop — get each item</span></span>
+<span id="cb17-4"><a href=""></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
+<span id="cb17-5"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"I like </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb17-6"><a href=""></a></span>
+<span id="cb17-7"><a href=""></a><span class="co"># Output:</span></span>
+<span id="cb17-8"><a href=""></a><span class="co"># I like apple!</span></span>
+<span id="cb17-9"><a href=""></a><span class="co"># I like banana!</span></span>
+<span id="cb17-10"><a href=""></a><span class="co"># I like cherry!</span></span>
+<span id="cb17-11"><a href=""></a><span class="co"># I like durian!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="co"># Loop with numbers</span></span>
+<span id="cb18-2"><a href=""></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">88</span>]</span>
+<span id="cb18-3"><a href=""></a></span>
+<span id="cb18-4"><a href=""></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-5"><a href=""></a><span class="cf">for</span> score <span class="kw">in</span> scores:</span>
+<span id="cb18-6"><a href=""></a>    total <span class="op">+=</span> score</span>
+<span id="cb18-7"><a href=""></a></span>
+<span id="cb18-8"><a href=""></a>average <span class="op">=</span> total <span class="op">/</span> <span class="bu">len</span>(scores)</span>
+<span id="cb18-9"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.1f}</span><span class="ss">"</span>)    <span class="co"># Average: 87.6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="enumerate-get-index-and-value" class="slide level2">
+<h2><code>enumerate()</code> — Get Index AND Value</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"durian"</span>]</span>
+<span id="cb19-2"><a href=""></a></span>
+<span id="cb19-3"><a href=""></a><span class="co"># Without enumerate — just values</span></span>
+<span id="cb19-4"><a href=""></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
+<span id="cb19-5"><a href=""></a>    <span class="bu">print</span>(fruit)</span>
+<span id="cb19-6"><a href=""></a></span>
+<span id="cb19-7"><a href=""></a><span class="co"># With enumerate — index AND value</span></span>
+<span id="cb19-8"><a href=""></a><span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits):</span>
+<span id="cb19-9"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-10"><a href=""></a><span class="co"># 0: apple</span></span>
+<span id="cb19-11"><a href=""></a><span class="co"># 1: banana</span></span>
+<span id="cb19-12"><a href=""></a><span class="co"># 2: cherry</span></span>
+<span id="cb19-13"><a href=""></a><span class="co"># 3: durian</span></span>
+<span id="cb19-14"><a href=""></a></span>
+<span id="cb19-15"><a href=""></a><span class="co"># Start counting from 1 (for display)</span></span>
+<span id="cb19-16"><a href=""></a><span class="cf">for</span> num, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits, <span class="dv">1</span>):</span>
+<span id="cb19-17"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>num<span class="sc">}</span><span class="ss">. </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-18"><a href=""></a><span class="co"># 1. apple</span></span>
+<span id="cb19-19"><a href=""></a><span class="co"># 2. banana</span></span>
+<span id="cb19-20"><a href=""></a><span class="co"># 3. cherry</span></span>
+<span id="cb19-21"><a href=""></a><span class="co"># 4. durian</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 When to Use <code>enumerate()</code></strong></p>
+</div>
+<div class="callout-content">
+<p>Use it whenever you need both the <strong>position</strong> and the <strong>value</strong>. It’s cleaner than using <code>range(len(list))</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="range-with-lists" class="slide level2">
+<h2><code>range()</code> with Lists</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"durian"</span>]</span>
+<span id="cb20-2"><a href=""></a></span>
+<span id="cb20-3"><a href=""></a><span class="co"># Using range(len()) — less Pythonic but sometimes useful</span></span>
+<span id="cb20-4"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(fruits)):</span>
+<span id="cb20-5"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fruits[i]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-6"><a href=""></a></span>
+<span id="cb20-7"><a href=""></a><span class="co"># Useful when you need to MODIFY items</span></span>
+<span id="cb20-8"><a href=""></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">88</span>]</span>
+<span id="cb20-9"><a href=""></a></span>
+<span id="cb20-10"><a href=""></a><span class="co"># Add 5 bonus points to every score</span></span>
+<span id="cb20-11"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(scores)):</span>
+<span id="cb20-12"><a href=""></a>    scores[i] <span class="op">+=</span> <span class="dv">5</span></span>
+<span id="cb20-13"><a href=""></a></span>
+<span id="cb20-14"><a href=""></a><span class="bu">print</span>(scores)    <span class="co"># [90, 97, 83, 100, 93]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="building-lists-with-loops" class="slide level2">
+<h2>Building Lists with Loops</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># Create a list of squares</span></span>
+<span id="cb21-2"><a href=""></a>squares <span class="op">=</span> []</span>
+<span id="cb21-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb21-4"><a href=""></a>    squares.append(i <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb21-5"><a href=""></a><span class="bu">print</span>(squares)    <span class="co"># [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span></span>
+<span id="cb21-6"><a href=""></a></span>
+<span id="cb21-7"><a href=""></a><span class="co"># Filter: keep only passing scores</span></span>
+<span id="cb21-8"><a href=""></a>all_scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">42</span>, <span class="dv">92</span>, <span class="dv">55</span>, <span class="dv">78</span>, <span class="dv">38</span>, <span class="dv">95</span>, <span class="dv">61</span>]</span>
+<span id="cb21-9"><a href=""></a>passing <span class="op">=</span> []</span>
+<span id="cb21-10"><a href=""></a><span class="cf">for</span> score <span class="kw">in</span> all_scores:</span>
+<span id="cb21-11"><a href=""></a>    <span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb21-12"><a href=""></a>        passing.append(score)</span>
+<span id="cb21-13"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Passing: </span><span class="sc">{</span>passing<span class="sc">}</span><span class="ss">"</span>)    <span class="co"># [85, 92, 78, 95, 61]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="co"># List comprehension — a shortcut! (same result)</span></span>
+<span id="cb22-2"><a href=""></a>squares <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)]</span>
+<span id="cb22-3"><a href=""></a><span class="bu">print</span>(squares)    <span class="co"># [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span></span>
+<span id="cb22-4"><a href=""></a></span>
+<span id="cb22-5"><a href=""></a>passing <span class="op">=</span> [s <span class="cf">for</span> s <span class="kw">in</span> all_scores <span class="cf">if</span> s <span class="op">&gt;=</span> <span class="dv">60</span>]</span>
+<span id="cb22-6"><a href=""></a><span class="bu">print</span>(passing)    <span class="co"># [85, 92, 78, 95, 61]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 List Comprehension</strong></p>
+</div>
+<div class="callout-content">
+<p><code>[expression for item in list]</code> — a compact way to create lists.</p>
+<p><code>[expression for item in list if condition]</code> — with filtering.</p>
+<p>It does the same thing as a loop + append, just shorter!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-3a-student-roster" class="slide level2">
+<h2>Practice 3A — Student Roster</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>students <span class="op">=</span> [<span class="st">"sokha"</span>, <span class="st">"dara"</span>, <span class="st">"CHENDA"</span>, <span class="st">"bopha"</span>, <span class="st">" Vanna "</span>]</span>
+<span id="cb23-2"><a href=""></a></span>
+<span id="cb23-3"><a href=""></a><span class="co"># Clean up names</span></span>
+<span id="cb23-4"><a href=""></a>clean_students <span class="op">=</span> []</span>
+<span id="cb23-5"><a href=""></a><span class="cf">for</span> name <span class="kw">in</span> students:</span>
+<span id="cb23-6"><a href=""></a>    clean_students.append(name.strip().title())</span>
+<span id="cb23-7"><a href=""></a></span>
+<span id="cb23-8"><a href=""></a><span class="bu">print</span>(<span class="st">"=== Student Roster ==="</span>)</span>
+<span id="cb23-9"><a href=""></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(clean_students, <span class="dv">1</span>):</span>
+<span id="cb23-10"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">. </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb23-11"><a href=""></a></span>
+<span id="cb23-12"><a href=""></a><span class="co"># Find longest name</span></span>
+<span id="cb23-13"><a href=""></a>longest <span class="op">=</span> <span class="bu">max</span>(clean_students, key<span class="op">=</span><span class="bu">len</span>)</span>
+<span id="cb23-14"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Longest name: </span><span class="sc">{</span>longest<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="bu">len</span>(longest)<span class="sc">}</span><span class="ss"> letters)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-4-tuples-immutable-sequences" class="title-slide slide level1 center">
+<h1>Part 4: Tuples — Immutable Sequences</h1>
+
+</section>
+<section id="what-is-a-tuple" class="slide level2">
+<h2>What is a Tuple?</h2>
+<h3 style="color: #2980b9; font-size: 1.4em;" id="a-tuple-is-an-ordered-immutable-collection-enclosed-in-parentheses">A <strong>tuple</strong> is an ordered, <strong>immutable</strong> collection enclosed in parentheses <code>()</code></h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># Creating tuples</span></span>
+<span id="cb24-2"><a href=""></a>coordinates <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb24-3"><a href=""></a>colors <span class="op">=</span> (<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>)</span>
+<span id="cb24-4"><a href=""></a>person <span class="op">=</span> (<span class="st">"Sokha"</span>, <span class="dv">20</span>, <span class="st">"Computer Science"</span>)</span>
+<span id="cb24-5"><a href=""></a>single <span class="op">=</span> (<span class="dv">42</span>,)     <span class="co"># ← comma is required for single-item tuple!</span></span>
+<span id="cb24-6"><a href=""></a>empty <span class="op">=</span> ()</span>
+<span id="cb24-7"><a href=""></a></span>
+<span id="cb24-8"><a href=""></a><span class="bu">print</span>(coordinates)    <span class="co"># (10, 20)</span></span>
+<span id="cb24-9"><a href=""></a><span class="bu">print</span>(colors)         <span class="co"># ('red', 'green', 'blue')</span></span>
+<span id="cb24-10"><a href=""></a><span class="bu">print</span>(<span class="bu">len</span>(colors))    <span class="co"># 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>⚠️ Single-Item Tuple Trap</strong></p>
+</div>
+<div class="callout-content">
+<p><code>(42)</code> is just the number 42 in parentheses!</p>
+<p><code>(42,)</code> is a tuple with one item — the <strong>comma</strong> makes it a tuple!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-tuple-items" class="slide level2">
+<h2>Accessing Tuple Items</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>colors <span class="op">=</span> (<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>, <span class="st">"yellow"</span>, <span class="st">"purple"</span>)</span>
+<span id="cb25-2"><a href=""></a></span>
+<span id="cb25-3"><a href=""></a><span class="co"># Indexing — same as lists</span></span>
+<span id="cb25-4"><a href=""></a><span class="bu">print</span>(colors[<span class="dv">0</span>])      <span class="co"># "red"</span></span>
+<span id="cb25-5"><a href=""></a><span class="bu">print</span>(colors[<span class="op">-</span><span class="dv">1</span>])     <span class="co"># "purple"</span></span>
+<span id="cb25-6"><a href=""></a><span class="bu">print</span>(colors[<span class="dv">1</span>:<span class="dv">3</span>])    <span class="co"># ('green', 'blue')</span></span>
+<span id="cb25-7"><a href=""></a></span>
+<span id="cb25-8"><a href=""></a><span class="co"># ✅ You CAN read items</span></span>
+<span id="cb25-9"><a href=""></a><span class="bu">print</span>(colors[<span class="dv">2</span>])      <span class="co"># "blue"</span></span>
+<span id="cb25-10"><a href=""></a></span>
+<span id="cb25-11"><a href=""></a><span class="co"># ❌ You CANNOT change items</span></span>
+<span id="cb25-12"><a href=""></a>colors[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"pink"</span>    <span class="co"># TypeError: 'tuple' object does not support item assignment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tuples-are-immutable-why-use-them" class="slide level2">
+<h2>Tuples are Immutable — Why Use Them?</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="co"># Tuple unpacking — assign multiple values at once!</span></span>
+<span id="cb26-2"><a href=""></a>person <span class="op">=</span> (<span class="st">"Sokha"</span>, <span class="dv">20</span>, <span class="st">"Computer Science"</span>)</span>
+<span id="cb26-3"><a href=""></a></span>
+<span id="cb26-4"><a href=""></a>name, age, major <span class="op">=</span> person    <span class="co"># Unpack into 3 variables</span></span>
+<span id="cb26-5"><a href=""></a><span class="bu">print</span>(name)     <span class="co"># "Sokha"</span></span>
+<span id="cb26-6"><a href=""></a><span class="bu">print</span>(age)      <span class="co"># 20</span></span>
+<span id="cb26-7"><a href=""></a><span class="bu">print</span>(major)    <span class="co"># "Computer Science"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># Swap two variables using tuple unpacking</span></span>
+<span id="cb27-2"><a href=""></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb27-3"><a href=""></a>b <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb27-4"><a href=""></a>a, b <span class="op">=</span> b, a    <span class="co"># Swap!</span></span>
+<span id="cb27-5"><a href=""></a><span class="bu">print</span>(a, b)    <span class="co"># 20 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>When to use tuples instead of lists:</strong></p>
+<ul>
+<li>Data that should <strong>NOT change</strong> (coordinates, RGB colors, dates)</li>
+<li><strong>Returning multiple values</strong> from a function</li>
+<li><strong>Dictionary keys</strong> (lists cannot be keys, tuples can!)</li>
+<li>When you want to signal “this data is fixed”</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 Simple Rule</strong></p>
+</div>
+<div class="callout-content">
+<p>If data should change → use a <strong>list</strong></p>
+<p>If data should stay fixed → use a <strong>tuple</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="tuple-methods-operations" class="slide level2">
+<h2>Tuple Methods &amp; Operations</h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>colors <span class="op">=</span> (<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"red"</span>)</span>
+<span id="cb28-2"><a href=""></a></span>
+<span id="cb28-3"><a href=""></a><span class="co"># count() — how many times?</span></span>
+<span id="cb28-4"><a href=""></a><span class="bu">print</span>(colors.count(<span class="st">"red"</span>))     <span class="co"># 3</span></span>
+<span id="cb28-5"><a href=""></a></span>
+<span id="cb28-6"><a href=""></a><span class="co"># index() — first position?</span></span>
+<span id="cb28-7"><a href=""></a><span class="bu">print</span>(colors.index(<span class="st">"green"</span>))   <span class="co"># 1</span></span>
+<span id="cb28-8"><a href=""></a></span>
+<span id="cb28-9"><a href=""></a><span class="co"># Membership test</span></span>
+<span id="cb28-10"><a href=""></a><span class="bu">print</span>(<span class="st">"blue"</span> <span class="kw">in</span> colors)        <span class="co"># True</span></span>
+<span id="cb28-11"><a href=""></a></span>
+<span id="cb28-12"><a href=""></a><span class="co"># Length</span></span>
+<span id="cb28-13"><a href=""></a><span class="bu">print</span>(<span class="bu">len</span>(colors))             <span class="co"># 6</span></span>
+<span id="cb28-14"><a href=""></a></span>
+<span id="cb28-15"><a href=""></a><span class="co"># Convert between list and tuple</span></span>
+<span id="cb28-16"><a href=""></a>my_list <span class="op">=</span> <span class="bu">list</span>(colors)         <span class="co"># Tuple → List (now mutable!)</span></span>
+<span id="cb28-17"><a href=""></a>my_tuple <span class="op">=</span> <span class="bu">tuple</span>(my_list)      <span class="co"># List → Tuple (now immutable!)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-4a-student-records-with-tuples" class="slide level2">
+<h2>Practice 4A — Student Records with Tuples</h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="co"># Each student is a tuple: (name, score, grade)</span></span>
+<span id="cb29-2"><a href=""></a>students <span class="op">=</span> [</span>
+<span id="cb29-3"><a href=""></a>    (<span class="st">"Sokha"</span>, <span class="dv">92</span>, <span class="st">"A"</span>),</span>
+<span id="cb29-4"><a href=""></a>    (<span class="st">"Dara"</span>, <span class="dv">78</span>, <span class="st">"C"</span>),</span>
+<span id="cb29-5"><a href=""></a>    (<span class="st">"Chenda"</span>, <span class="dv">85</span>, <span class="st">"B"</span>),</span>
+<span id="cb29-6"><a href=""></a>    (<span class="st">"Bopha"</span>, <span class="dv">95</span>, <span class="st">"A"</span>),</span>
+<span id="cb29-7"><a href=""></a>    (<span class="st">"Vanna"</span>, <span class="dv">68</span>, <span class="st">"D"</span>),</span>
+<span id="cb29-8"><a href=""></a>]</span>
+<span id="cb29-9"><a href=""></a></span>
+<span id="cb29-10"><a href=""></a><span class="bu">print</span>(<span class="st">"=== Student Report ==="</span>)</span>
+<span id="cb29-11"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Name'</span><span class="sc">:&lt;12}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Score'</span><span class="sc">:&gt;6}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Grade'</span><span class="sc">:&gt;6}</span><span class="ss">"</span>)</span>
+<span id="cb29-12"><a href=""></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">26</span>)</span>
+<span id="cb29-13"><a href=""></a></span>
+<span id="cb29-14"><a href=""></a><span class="cf">for</span> name, score, grade <span class="kw">in</span> students:</span>
+<span id="cb29-15"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:&lt;12}</span><span class="ss"> </span><span class="sc">{</span>score<span class="sc">:&gt;6}</span><span class="ss"> </span><span class="sc">{</span>grade<span class="sc">:&gt;6}</span><span class="ss">"</span>)</span>
+<span id="cb29-16"><a href=""></a></span>
+<span id="cb29-17"><a href=""></a><span class="co"># Find top student</span></span>
+<span id="cb29-18"><a href=""></a>top_student <span class="op">=</span> <span class="bu">max</span>(students, key<span class="op">=</span><span class="kw">lambda</span> s: s[<span class="dv">1</span>])</span>
+<span id="cb29-19"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Top student: </span><span class="sc">{</span>top_student[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> with </span><span class="sc">{</span>top_student[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> points!"</span>)</span>
+<span id="cb29-20"><a href=""></a></span>
+<span id="cb29-21"><a href=""></a><span class="co"># Calculate average</span></span>
+<span id="cb29-22"><a href=""></a>avg <span class="op">=</span> <span class="bu">sum</span>(s[<span class="dv">1</span>] <span class="cf">for</span> s <span class="kw">in</span> students) <span class="op">/</span> <span class="bu">len</span>(students)</span>
+<span id="cb29-23"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Class average: </span><span class="sc">{</span>avg<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-5-dictionaries-key-value-pairs" class="title-slide slide level1 center">
+<h1>Part 5: Dictionaries — Key-Value Pairs</h1>
+
+</section>
+<section id="what-is-a-dictionary" class="slide level2">
+<h2>What is a Dictionary?</h2>
+<h3 style="color: #2980b9; font-size: 1.4em;" id="a-dictionary-stores-data-as-key-value-pairs-inside-curly-braces">A <strong>dictionary</strong> stores data as <strong>key: value</strong> pairs inside curly braces <code>{}</code></h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="co"># Creating a dictionary</span></span>
+<span id="cb30-2"><a href=""></a>student <span class="op">=</span> {</span>
+<span id="cb30-3"><a href=""></a>    <span class="st">"name"</span>: <span class="st">"Sokha"</span>,</span>
+<span id="cb30-4"><a href=""></a>    <span class="st">"age"</span>: <span class="dv">20</span>,</span>
+<span id="cb30-5"><a href=""></a>    <span class="st">"major"</span>: <span class="st">"Computer Science"</span>,</span>
+<span id="cb30-6"><a href=""></a>    <span class="st">"gpa"</span>: <span class="fl">3.75</span></span>
+<span id="cb30-7"><a href=""></a>}</span>
+<span id="cb30-8"><a href=""></a></span>
+<span id="cb30-9"><a href=""></a><span class="bu">print</span>(student)</span>
+<span id="cb30-10"><a href=""></a><span class="co"># {'name': 'Sokha', 'age': 20, 'major': 'Computer Science', 'gpa': 3.75}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="co"># Empty dictionary</span></span>
+<span id="cb31-2"><a href=""></a>empty <span class="op">=</span> {}</span>
+<span id="cb31-3"><a href=""></a></span>
+<span id="cb31-4"><a href=""></a><span class="co"># Dictionary with different value types</span></span>
+<span id="cb31-5"><a href=""></a>profile <span class="op">=</span> {</span>
+<span id="cb31-6"><a href=""></a>    <span class="st">"username"</span>: <span class="st">"sokha_dev"</span>,</span>
+<span id="cb31-7"><a href=""></a>    <span class="st">"followers"</span>: <span class="dv">150</span>,</span>
+<span id="cb31-8"><a href=""></a>    <span class="st">"is_active"</span>: <span class="va">True</span>,</span>
+<span id="cb31-9"><a href=""></a>    <span class="st">"skills"</span>: [<span class="st">"Python"</span>, <span class="st">"HTML"</span>, <span class="st">"CSS"</span>]   <span class="co"># Value can be a list!</span></span>
+<span id="cb31-10"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 Key Facts About Dictionaries</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Unordered</strong> (Python 3.7+ keeps insertion order, but don’t rely on it for logic)</li>
+<li><strong>Mutable</strong> — you can add, change, and delete entries</li>
+<li><strong>Keys must be unique</strong> — no duplicate keys allowed</li>
+<li><strong>Keys must be immutable</strong> — strings, numbers, tuples can be keys (NOT lists!)</li>
+<li><strong>Values can be anything</strong> — strings, numbers, lists, other dicts…</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-dictionary-values" class="slide level2">
+<h2>Accessing Dictionary Values</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>student <span class="op">=</span> {</span>
+<span id="cb32-2"><a href=""></a>    <span class="st">"name"</span>: <span class="st">"Sokha"</span>,</span>
+<span id="cb32-3"><a href=""></a>    <span class="st">"age"</span>: <span class="dv">20</span>,</span>
+<span id="cb32-4"><a href=""></a>    <span class="st">"major"</span>: <span class="st">"Computer Science"</span>,</span>
+<span id="cb32-5"><a href=""></a>    <span class="st">"gpa"</span>: <span class="fl">3.75</span></span>
+<span id="cb32-6"><a href=""></a>}</span>
+<span id="cb32-7"><a href=""></a></span>
+<span id="cb32-8"><a href=""></a><span class="co"># Method 1: Square brackets (raises KeyError if key doesn't exist)</span></span>
+<span id="cb32-9"><a href=""></a><span class="bu">print</span>(student[<span class="st">"name"</span>])     <span class="co"># "Sokha"</span></span>
+<span id="cb32-10"><a href=""></a><span class="bu">print</span>(student[<span class="st">"gpa"</span>])      <span class="co"># 3.75</span></span>
+<span id="cb32-11"><a href=""></a><span class="co"># print(student["email"])  # ❌ KeyError: 'email'</span></span>
+<span id="cb32-12"><a href=""></a></span>
+<span id="cb32-13"><a href=""></a><span class="co"># Method 2: .get() (returns None or default if key doesn't exist)</span></span>
+<span id="cb32-14"><a href=""></a><span class="bu">print</span>(student.get(<span class="st">"name"</span>))         <span class="co"># "Sokha"</span></span>
+<span id="cb32-15"><a href=""></a><span class="bu">print</span>(student.get(<span class="st">"email"</span>))        <span class="co"># None  (no error!)</span></span>
+<span id="cb32-16"><a href=""></a><span class="bu">print</span>(student.get(<span class="st">"email"</span>, <span class="st">"N/A"</span>)) <span class="co"># "N/A" (custom default)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 Use <code>.get()</code> to Be Safe</strong></p>
+</div>
+<div class="callout-content">
+<p><code>dict["key"]</code> crashes if the key is missing. <code>dict.get("key")</code> returns <code>None</code> safely. Use <code>.get()</code> when you’re not sure if the key exists!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-updating-dictionary-entries" class="slide level2">
+<h2>Adding &amp; Updating Dictionary Entries</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>student <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Sokha"</span>, <span class="st">"age"</span>: <span class="dv">20</span>}</span>
+<span id="cb33-2"><a href=""></a></span>
+<span id="cb33-3"><a href=""></a><span class="co"># Add a new key-value pair</span></span>
+<span id="cb33-4"><a href=""></a>student[<span class="st">"major"</span>] <span class="op">=</span> <span class="st">"Computer Science"</span></span>
+<span id="cb33-5"><a href=""></a>student[<span class="st">"gpa"</span>] <span class="op">=</span> <span class="fl">3.75</span></span>
+<span id="cb33-6"><a href=""></a><span class="bu">print</span>(student)</span>
+<span id="cb33-7"><a href=""></a><span class="co"># {'name': 'Sokha', 'age': 20, 'major': 'Computer Science', 'gpa': 3.75}</span></span>
+<span id="cb33-8"><a href=""></a></span>
+<span id="cb33-9"><a href=""></a><span class="co"># Update an existing value</span></span>
+<span id="cb33-10"><a href=""></a>student[<span class="st">"age"</span>] <span class="op">=</span> <span class="dv">21</span></span>
+<span id="cb33-11"><a href=""></a><span class="bu">print</span>(student[<span class="st">"age"</span>])    <span class="co"># 21</span></span>
+<span id="cb33-12"><a href=""></a></span>
+<span id="cb33-13"><a href=""></a><span class="co"># Update multiple values at once</span></span>
+<span id="cb33-14"><a href=""></a>student.update({<span class="st">"gpa"</span>: <span class="fl">3.80</span>, <span class="st">"year"</span>: <span class="dv">3</span>})</span>
+<span id="cb33-15"><a href=""></a><span class="bu">print</span>(student)</span>
+<span id="cb33-16"><a href=""></a><span class="co"># {'name': 'Sokha', 'age': 21, 'major': 'Computer Science', 'gpa': 3.8, 'year': 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="removing-dictionary-entries" class="slide level2">
+<h2>Removing Dictionary Entries</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>student <span class="op">=</span> {</span>
+<span id="cb34-2"><a href=""></a>    <span class="st">"name"</span>: <span class="st">"Sokha"</span>,</span>
+<span id="cb34-3"><a href=""></a>    <span class="st">"age"</span>: <span class="dv">20</span>,</span>
+<span id="cb34-4"><a href=""></a>    <span class="st">"major"</span>: <span class="st">"CS"</span>,</span>
+<span id="cb34-5"><a href=""></a>    <span class="st">"gpa"</span>: <span class="fl">3.75</span>,</span>
+<span id="cb34-6"><a href=""></a>    <span class="st">"temp"</span>: <span class="st">"delete me"</span></span>
+<span id="cb34-7"><a href=""></a>}</span>
+<span id="cb34-8"><a href=""></a></span>
+<span id="cb34-9"><a href=""></a><span class="co"># pop() — remove and return a value</span></span>
+<span id="cb34-10"><a href=""></a>removed <span class="op">=</span> student.pop(<span class="st">"temp"</span>)</span>
+<span id="cb34-11"><a href=""></a><span class="bu">print</span>(removed)       <span class="co"># "delete me"</span></span>
+<span id="cb34-12"><a href=""></a><span class="bu">print</span>(student)       <span class="co"># temp is gone</span></span>
+<span id="cb34-13"><a href=""></a></span>
+<span id="cb34-14"><a href=""></a><span class="co"># pop() with default (no error if key missing)</span></span>
+<span id="cb34-15"><a href=""></a>result <span class="op">=</span> student.pop(<span class="st">"email"</span>, <span class="st">"Not found"</span>)</span>
+<span id="cb34-16"><a href=""></a><span class="bu">print</span>(result)        <span class="co"># "Not found"</span></span>
+<span id="cb34-17"><a href=""></a></span>
+<span id="cb34-18"><a href=""></a><span class="co"># del — delete by key</span></span>
+<span id="cb34-19"><a href=""></a><span class="kw">del</span> student[<span class="st">"gpa"</span>]</span>
+<span id="cb34-20"><a href=""></a><span class="bu">print</span>(student)       <span class="co"># gpa is gone</span></span>
+<span id="cb34-21"><a href=""></a></span>
+<span id="cb34-22"><a href=""></a><span class="co"># clear() — remove everything</span></span>
+<span id="cb34-23"><a href=""></a><span class="co"># student.clear()    # {}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="checking-if-a-key-exists" class="slide level2">
+<h2>Checking if a Key Exists</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>student <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Sokha"</span>, <span class="st">"age"</span>: <span class="dv">20</span>, <span class="st">"major"</span>: <span class="st">"CS"</span>}</span>
+<span id="cb35-2"><a href=""></a></span>
+<span id="cb35-3"><a href=""></a><span class="co"># Check with 'in' (checks KEYS, not values)</span></span>
+<span id="cb35-4"><a href=""></a><span class="bu">print</span>(<span class="st">"name"</span> <span class="kw">in</span> student)       <span class="co"># True</span></span>
+<span id="cb35-5"><a href=""></a><span class="bu">print</span>(<span class="st">"email"</span> <span class="kw">in</span> student)      <span class="co"># False</span></span>
+<span id="cb35-6"><a href=""></a><span class="bu">print</span>(<span class="st">"Sokha"</span> <span class="kw">in</span> student)      <span class="co"># False  (checks keys, not values!)</span></span>
+<span id="cb35-7"><a href=""></a></span>
+<span id="cb35-8"><a href=""></a><span class="co"># Safe pattern: check before accessing</span></span>
+<span id="cb35-9"><a href=""></a><span class="cf">if</span> <span class="st">"email"</span> <span class="kw">in</span> student:</span>
+<span id="cb35-10"><a href=""></a>    <span class="bu">print</span>(student[<span class="st">"email"</span>])</span>
+<span id="cb35-11"><a href=""></a><span class="cf">else</span>:</span>
+<span id="cb35-12"><a href=""></a>    <span class="bu">print</span>(<span class="st">"No email on file"</span>)</span>
+<span id="cb35-13"><a href=""></a></span>
+<span id="cb35-14"><a href=""></a><span class="co"># Or use .get()</span></span>
+<span id="cb35-15"><a href=""></a>email <span class="op">=</span> student.get(<span class="st">"email"</span>, <span class="st">"No email on file"</span>)</span>
+<span id="cb35-16"><a href=""></a><span class="bu">print</span>(email)    <span class="co"># "No email on file"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-5a-student-profile-builder" class="slide level2">
+<h2>Practice 5A — Student Profile Builder</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="bu">print</span>(<span class="st">"=== Student Profile Builder ===</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb36-2"><a href=""></a></span>
+<span id="cb36-3"><a href=""></a><span class="co"># Collect info</span></span>
+<span id="cb36-4"><a href=""></a>profile <span class="op">=</span> {}</span>
+<span id="cb36-5"><a href=""></a>profile[<span class="st">"name"</span>] <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Name: "</span>).strip().title()</span>
+<span id="cb36-6"><a href=""></a>profile[<span class="st">"id"</span>] <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Student ID: "</span>).strip().upper()</span>
+<span id="cb36-7"><a href=""></a>profile[<span class="st">"major"</span>] <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Major: "</span>).strip().title()</span>
+<span id="cb36-8"><a href=""></a>profile[<span class="st">"year"</span>] <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Year (1-4): "</span>).strip()</span>
+<span id="cb36-9"><a href=""></a></span>
+<span id="cb36-10"><a href=""></a><span class="co"># Add GPA</span></span>
+<span id="cb36-11"><a href=""></a>gpa_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"GPA (or press Enter to skip): "</span>).strip()</span>
+<span id="cb36-12"><a href=""></a><span class="cf">if</span> gpa_input:</span>
+<span id="cb36-13"><a href=""></a>    profile[<span class="st">"gpa"</span>] <span class="op">=</span> <span class="bu">float</span>(gpa_input)</span>
+<span id="cb36-14"><a href=""></a></span>
+<span id="cb36-15"><a href=""></a><span class="co"># Display</span></span>
+<span id="cb36-16"><a href=""></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
+<span id="cb36-17"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'STUDENT PROFILE'</span><span class="sc">:^35}</span><span class="ss">"</span>)</span>
+<span id="cb36-18"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
+<span id="cb36-19"><a href=""></a><span class="cf">for</span> key, value <span class="kw">in</span> profile.items():</span>
+<span id="cb36-20"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>key<span class="sc">.</span>upper()<span class="sc">:&lt;10}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-21"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-6-dictionary-methods-looping" class="title-slide slide level1 center">
+<h1>Part 6: Dictionary Methods &amp; Looping</h1>
+
+</section>
+<section id="looping-through-dictionaries" class="slide level2">
+<h2>Looping Through Dictionaries</h2>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>student <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Sokha"</span>, <span class="st">"age"</span>: <span class="dv">20</span>, <span class="st">"major"</span>: <span class="st">"CS"</span>, <span class="st">"gpa"</span>: <span class="fl">3.75</span>}</span>
+<span id="cb37-2"><a href=""></a></span>
+<span id="cb37-3"><a href=""></a><span class="co"># Loop through KEYS (default)</span></span>
+<span id="cb37-4"><a href=""></a><span class="cf">for</span> key <span class="kw">in</span> student:</span>
+<span id="cb37-5"><a href=""></a>    <span class="bu">print</span>(key)</span>
+<span id="cb37-6"><a href=""></a><span class="co"># name, age, major, gpa</span></span>
+<span id="cb37-7"><a href=""></a></span>
+<span id="cb37-8"><a href=""></a><span class="co"># Loop through VALUES</span></span>
+<span id="cb37-9"><a href=""></a><span class="cf">for</span> value <span class="kw">in</span> student.values():</span>
+<span id="cb37-10"><a href=""></a>    <span class="bu">print</span>(value)</span>
+<span id="cb37-11"><a href=""></a><span class="co"># Sokha, 20, CS, 3.75</span></span>
+<span id="cb37-12"><a href=""></a></span>
+<span id="cb37-13"><a href=""></a><span class="co"># Loop through KEY-VALUE pairs</span></span>
+<span id="cb37-14"><a href=""></a><span class="cf">for</span> key, value <span class="kw">in</span> student.items():</span>
+<span id="cb37-15"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb37-16"><a href=""></a><span class="co"># name: Sokha</span></span>
+<span id="cb37-17"><a href=""></a><span class="co"># age: 20</span></span>
+<span id="cb37-18"><a href=""></a><span class="co"># major: CS</span></span>
+<span id="cb37-19"><a href=""></a><span class="co"># gpa: 3.75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>🎯 The Three Ways to Loop</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><code>for key in dict:</code> or <code>for key in dict.keys():</code> → get <strong>keys</strong></li>
+<li><code>for value in dict.values():</code> → get <strong>values</strong></li>
+<li><code>for key, value in dict.items():</code> → get <strong>both</strong> (most common!)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionary-.keys-.values-.items" class="slide level2">
+<h2>Dictionary <code>.keys()</code>, <code>.values()</code>, <code>.items()</code></h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>student <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Sokha"</span>, <span class="st">"age"</span>: <span class="dv">20</span>, <span class="st">"major"</span>: <span class="st">"CS"</span>}</span>
+<span id="cb38-2"><a href=""></a></span>
+<span id="cb38-3"><a href=""></a><span class="co"># Get all keys as a list</span></span>
+<span id="cb38-4"><a href=""></a>keys <span class="op">=</span> <span class="bu">list</span>(student.keys())</span>
+<span id="cb38-5"><a href=""></a><span class="bu">print</span>(keys)      <span class="co"># ['name', 'age', 'major']</span></span>
+<span id="cb38-6"><a href=""></a></span>
+<span id="cb38-7"><a href=""></a><span class="co"># Get all values as a list</span></span>
+<span id="cb38-8"><a href=""></a>values <span class="op">=</span> <span class="bu">list</span>(student.values())</span>
+<span id="cb38-9"><a href=""></a><span class="bu">print</span>(values)    <span class="co"># ['Sokha', 20, 'CS']</span></span>
+<span id="cb38-10"><a href=""></a></span>
+<span id="cb38-11"><a href=""></a><span class="co"># Get all pairs as a list of tuples</span></span>
+<span id="cb38-12"><a href=""></a>items <span class="op">=</span> <span class="bu">list</span>(student.items())</span>
+<span id="cb38-13"><a href=""></a><span class="bu">print</span>(items)     <span class="co"># [('name', 'Sokha'), ('age', 20), ('major', 'CS')]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="useful-dictionary-patterns" class="slide level2">
+<h2>Useful Dictionary Patterns</h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="co"># Pattern 1: Counting occurrences</span></span>
+<span id="cb39-2"><a href=""></a>sentence <span class="op">=</span> <span class="st">"the cat sat on the mat the cat"</span></span>
+<span id="cb39-3"><a href=""></a>word_count <span class="op">=</span> {}</span>
+<span id="cb39-4"><a href=""></a><span class="cf">for</span> word <span class="kw">in</span> sentence.split():</span>
+<span id="cb39-5"><a href=""></a>    <span class="cf">if</span> word <span class="kw">in</span> word_count:</span>
+<span id="cb39-6"><a href=""></a>        word_count[word] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb39-7"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb39-8"><a href=""></a>        word_count[word] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb39-9"><a href=""></a><span class="bu">print</span>(word_count)</span>
+<span id="cb39-10"><a href=""></a><span class="co"># {'the': 3, 'cat': 2, 'sat': 1, 'on': 1, 'mat': 1}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="co"># Pattern 2: Counting with .get() (shorter!)</span></span>
+<span id="cb40-2"><a href=""></a>word_count <span class="op">=</span> {}</span>
+<span id="cb40-3"><a href=""></a><span class="cf">for</span> word <span class="kw">in</span> sentence.split():</span>
+<span id="cb40-4"><a href=""></a>    word_count[word] <span class="op">=</span> word_count.get(word, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb40-5"><a href=""></a><span class="bu">print</span>(word_count)</span>
+<span id="cb40-6"><a href=""></a><span class="co"># Same result: {'the': 3, 'cat': 2, 'sat': 1, 'on': 1, 'mat': 1}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="co"># Pattern 3: Grouping items</span></span>
+<span id="cb41-2"><a href=""></a>scores <span class="op">=</span> [(<span class="st">"Sokha"</span>, <span class="dv">92</span>), (<span class="st">"Dara"</span>, <span class="dv">78</span>), (<span class="st">"Sokha"</span>, <span class="dv">88</span>), (<span class="st">"Dara"</span>, <span class="dv">85</span>)]</span>
+<span id="cb41-3"><a href=""></a>grouped <span class="op">=</span> {}</span>
+<span id="cb41-4"><a href=""></a><span class="cf">for</span> name, score <span class="kw">in</span> scores:</span>
+<span id="cb41-5"><a href=""></a>    <span class="cf">if</span> name <span class="kw">not</span> <span class="kw">in</span> grouped:</span>
+<span id="cb41-6"><a href=""></a>        grouped[name] <span class="op">=</span> []</span>
+<span id="cb41-7"><a href=""></a>    grouped[name].append(score)</span>
+<span id="cb41-8"><a href=""></a><span class="bu">print</span>(grouped)    <span class="co"># {'Sokha': [92, 88], 'Dara': [78, 85]}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-6a-word-frequency-counter" class="slide level2">
+<h2>Practice 6A — Word Frequency Counter</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a>text <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a sentence: "</span>).lower()</span>
+<span id="cb42-2"><a href=""></a>words <span class="op">=</span> text.split()</span>
+<span id="cb42-3"><a href=""></a></span>
+<span id="cb42-4"><a href=""></a><span class="co"># Count each word</span></span>
+<span id="cb42-5"><a href=""></a>frequency <span class="op">=</span> {}</span>
+<span id="cb42-6"><a href=""></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb42-7"><a href=""></a>    frequency[word] <span class="op">=</span> frequency.get(word, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb42-8"><a href=""></a></span>
+<span id="cb42-9"><a href=""></a><span class="co"># Display sorted by frequency (highest first)</span></span>
+<span id="cb42-10"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'Word'</span><span class="sc">:&lt;15}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Count'</span><span class="sc">:&gt;5}</span><span class="ss">"</span>)</span>
+<span id="cb42-11"><a href=""></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">22</span>)</span>
+<span id="cb42-12"><a href=""></a></span>
+<span id="cb42-13"><a href=""></a>sorted_words <span class="op">=</span> <span class="bu">sorted</span>(frequency.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb42-14"><a href=""></a><span class="cf">for</span> word, count <span class="kw">in</span> sorted_words:</span>
+<span id="cb42-15"><a href=""></a>    bar <span class="op">=</span> <span class="st">"█"</span> <span class="op">*</span> count</span>
+<span id="cb42-16"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>word<span class="sc">:&lt;15}</span><span class="ss"> </span><span class="sc">{</span>count<span class="sc">:&gt;5}</span><span class="ss">  </span><span class="sc">{</span>bar<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb42-17"><a href=""></a></span>
+<span id="cb42-18"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Unique words: </span><span class="sc">{</span><span class="bu">len</span>(frequency)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb42-19"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Total words:  </span><span class="sc">{</span><span class="bu">len</span>(words)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-6b-contact-book" class="slide level2">
+<h2>Practice 6B — Contact Book</h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href=""></a>contacts <span class="op">=</span> {}</span>
+<span id="cb43-2"><a href=""></a></span>
+<span id="cb43-3"><a href=""></a><span class="bu">print</span>(<span class="st">"=== Contact Book ==="</span>)</span>
+<span id="cb43-4"><a href=""></a><span class="bu">print</span>(<span class="st">"Commands: add, search, list, delete, quit</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb43-5"><a href=""></a></span>
+<span id="cb43-6"><a href=""></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb43-7"><a href=""></a>    cmd <span class="op">=</span> <span class="bu">input</span>(<span class="st">"&gt;&gt; "</span>).strip().lower()</span>
+<span id="cb43-8"><a href=""></a></span>
+<span id="cb43-9"><a href=""></a>    <span class="cf">if</span> cmd <span class="op">==</span> <span class="st">"add"</span>:</span>
+<span id="cb43-10"><a href=""></a>        name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Name: "</span>).strip().title()</span>
+<span id="cb43-11"><a href=""></a>        phone <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Phone: "</span>).strip()</span>
+<span id="cb43-12"><a href=""></a>        contacts[name] <span class="op">=</span> phone</span>
+<span id="cb43-13"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  ✅ Added </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb43-14"><a href=""></a></span>
+<span id="cb43-15"><a href=""></a>    <span class="cf">elif</span> cmd <span class="op">==</span> <span class="st">"search"</span>:</span>
+<span id="cb43-16"><a href=""></a>        name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Search name: "</span>).strip().title()</span>
+<span id="cb43-17"><a href=""></a>        phone <span class="op">=</span> contacts.get(name)</span>
+<span id="cb43-18"><a href=""></a>        <span class="cf">if</span> phone:</span>
+<span id="cb43-19"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  📞 </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>phone<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb43-20"><a href=""></a>        <span class="cf">else</span>:</span>
+<span id="cb43-21"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  ❌ '</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">' not found."</span>)</span>
+<span id="cb43-22"><a href=""></a></span>
+<span id="cb43-23"><a href=""></a>    <span class="cf">elif</span> cmd <span class="op">==</span> <span class="st">"list"</span>:</span>
+<span id="cb43-24"><a href=""></a>        <span class="cf">if</span> contacts:</span>
+<span id="cb43-25"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">  </span><span class="sc">{</span><span class="st">'Name'</span><span class="sc">:&lt;15}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Phone'</span><span class="sc">:&gt;12}</span><span class="ss">"</span>)</span>
+<span id="cb43-26"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">28</span>)</span>
+<span id="cb43-27"><a href=""></a>            <span class="cf">for</span> name, phone <span class="kw">in</span> <span class="bu">sorted</span>(contacts.items()):</span>
+<span id="cb43-28"><a href=""></a>                <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>name<span class="sc">:&lt;15}</span><span class="ss"> </span><span class="sc">{</span>phone<span class="sc">:&gt;12}</span><span class="ss">"</span>)</span>
+<span id="cb43-29"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">  Total: </span><span class="sc">{</span><span class="bu">len</span>(contacts)<span class="sc">}</span><span class="ss"> contacts"</span>)</span>
+<span id="cb43-30"><a href=""></a>        <span class="cf">else</span>:</span>
+<span id="cb43-31"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  📭 No contacts yet."</span>)</span>
+<span id="cb43-32"><a href=""></a></span>
+<span id="cb43-33"><a href=""></a>    <span class="cf">elif</span> cmd <span class="op">==</span> <span class="st">"delete"</span>:</span>
+<span id="cb43-34"><a href=""></a>        name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Delete name: "</span>).strip().title()</span>
+<span id="cb43-35"><a href=""></a>        <span class="cf">if</span> name <span class="kw">in</span> contacts:</span>
+<span id="cb43-36"><a href=""></a>            <span class="kw">del</span> contacts[name]</span>
+<span id="cb43-37"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  🗑️ Deleted </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb43-38"><a href=""></a>        <span class="cf">else</span>:</span>
+<span id="cb43-39"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  ❌ '</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">' not found."</span>)</span>
+<span id="cb43-40"><a href=""></a></span>
+<span id="cb43-41"><a href=""></a>    <span class="cf">elif</span> cmd <span class="op">==</span> <span class="st">"quit"</span>:</span>
+<span id="cb43-42"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  Goodbye! 👋"</span>)</span>
+<span id="cb43-43"><a href=""></a>        <span class="cf">break</span></span>
+<span id="cb43-44"><a href=""></a></span>
+<span id="cb43-45"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb43-46"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  ❓ Unknown command."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-7-nested-structures-combining-data-types" class="title-slide slide level1 center">
+<h1>Part 7: Nested Structures &amp; Combining Data Types</h1>
+
+</section>
+<section id="lists-of-dictionaries" class="slide level2">
+<h2>Lists of Dictionaries</h2>
+<h3 style="color: #2980b9; font-size: 1.4em;" id="the-most-common-pattern-a-list-of-dictionaries">The most common pattern: a <strong>list</strong> of <strong>dictionaries</strong></h3>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>students <span class="op">=</span> [</span>
+<span id="cb44-2"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Sokha"</span>, <span class="st">"age"</span>: <span class="dv">20</span>, <span class="st">"gpa"</span>: <span class="fl">3.75</span>},</span>
+<span id="cb44-3"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Dara"</span>, <span class="st">"age"</span>: <span class="dv">21</span>, <span class="st">"gpa"</span>: <span class="fl">3.50</span>},</span>
+<span id="cb44-4"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Chenda"</span>, <span class="st">"age"</span>: <span class="dv">19</span>, <span class="st">"gpa"</span>: <span class="fl">3.90</span>},</span>
+<span id="cb44-5"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Bopha"</span>, <span class="st">"age"</span>: <span class="dv">22</span>, <span class="st">"gpa"</span>: <span class="fl">3.20</span>},</span>
+<span id="cb44-6"><a href=""></a>]</span>
+<span id="cb44-7"><a href=""></a></span>
+<span id="cb44-8"><a href=""></a><span class="co"># Access a specific student</span></span>
+<span id="cb44-9"><a href=""></a><span class="bu">print</span>(students[<span class="dv">0</span>][<span class="st">"name"</span>])     <span class="co"># "Sokha"</span></span>
+<span id="cb44-10"><a href=""></a><span class="bu">print</span>(students[<span class="dv">2</span>][<span class="st">"gpa"</span>])      <span class="co"># 3.9</span></span>
+<span id="cb44-11"><a href=""></a></span>
+<span id="cb44-12"><a href=""></a><span class="co"># Loop through all students</span></span>
+<span id="cb44-13"><a href=""></a><span class="cf">for</span> student <span class="kw">in</span> students:</span>
+<span id="cb44-14"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>student[<span class="st">'name'</span>]<span class="sc">}</span><span class="ss"> — GPA: </span><span class="sc">{</span>student[<span class="st">'gpa'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💡 Think of it Like a Table!</strong></p>
+</div>
+<div class="callout-content">
+<p>Each dictionary is a <strong>row</strong>, each key is a <strong>column</strong>. This is how real databases store data!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionary-with-list-values" class="slide level2">
+<h2>Dictionary with List Values</h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="co"># Each key maps to a list of values</span></span>
+<span id="cb45-2"><a href=""></a>grades <span class="op">=</span> {</span>
+<span id="cb45-3"><a href=""></a>    <span class="st">"Sokha"</span>: [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">95</span>],</span>
+<span id="cb45-4"><a href=""></a>    <span class="st">"Dara"</span>: [<span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">75</span>, <span class="dv">80</span>],</span>
+<span id="cb45-5"><a href=""></a>    <span class="st">"Chenda"</span>: [<span class="dv">92</span>, <span class="dv">95</span>, <span class="dv">98</span>, <span class="dv">90</span>],</span>
+<span id="cb45-6"><a href=""></a>}</span>
+<span id="cb45-7"><a href=""></a></span>
+<span id="cb45-8"><a href=""></a><span class="co"># Access Sokha's grades</span></span>
+<span id="cb45-9"><a href=""></a><span class="bu">print</span>(grades[<span class="st">"Sokha"</span>])         <span class="co"># [85, 92, 88, 95]</span></span>
+<span id="cb45-10"><a href=""></a><span class="bu">print</span>(grades[<span class="st">"Sokha"</span>][<span class="dv">0</span>])      <span class="co"># 85  (first grade)</span></span>
+<span id="cb45-11"><a href=""></a></span>
+<span id="cb45-12"><a href=""></a><span class="co"># Calculate each student's average</span></span>
+<span id="cb45-13"><a href=""></a><span class="cf">for</span> name, score_list <span class="kw">in</span> grades.items():</span>
+<span id="cb45-14"><a href=""></a>    avg <span class="op">=</span> <span class="bu">sum</span>(score_list) <span class="op">/</span> <span class="bu">len</span>(score_list)</span>
+<span id="cb45-15"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: avg = </span><span class="sc">{</span>avg<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb45-16"><a href=""></a><span class="co"># Sokha: avg = 90.0</span></span>
+<span id="cb45-17"><a href=""></a><span class="co"># Dara: avg = 78.8</span></span>
+<span id="cb45-18"><a href=""></a><span class="co"># Chenda: avg = 93.8</span></span>
+<span id="cb45-19"><a href=""></a></span>
+<span id="cb45-20"><a href=""></a><span class="co"># Add a new grade for Sokha</span></span>
+<span id="cb45-21"><a href=""></a>grades[<span class="st">"Sokha"</span>].append(<span class="dv">90</span>)</span>
+<span id="cb45-22"><a href=""></a><span class="bu">print</span>(grades[<span class="st">"Sokha"</span>])    <span class="co"># [85, 92, 88, 95, 90]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="nested-dictionaries" class="slide level2">
+<h2>Nested Dictionaries</h2>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href=""></a><span class="co"># Dictionary inside a dictionary</span></span>
+<span id="cb46-2"><a href=""></a>school <span class="op">=</span> {</span>
+<span id="cb46-3"><a href=""></a>    <span class="st">"CS101"</span>: {</span>
+<span id="cb46-4"><a href=""></a>        <span class="st">"title"</span>: <span class="st">"Intro to Programming"</span>,</span>
+<span id="cb46-5"><a href=""></a>        <span class="st">"instructor"</span>: <span class="st">"MIN Sothearith"</span>,</span>
+<span id="cb46-6"><a href=""></a>        <span class="st">"students"</span>: <span class="dv">35</span>,</span>
+<span id="cb46-7"><a href=""></a>        <span class="st">"room"</span>: <span class="st">"A201"</span></span>
+<span id="cb46-8"><a href=""></a>    },</span>
+<span id="cb46-9"><a href=""></a>    <span class="st">"CS201"</span>: {</span>
+<span id="cb46-10"><a href=""></a>        <span class="st">"title"</span>: <span class="st">"Data Structures"</span>,</span>
+<span id="cb46-11"><a href=""></a>        <span class="st">"instructor"</span>: <span class="st">"Dr. Sok"</span>,</span>
+<span id="cb46-12"><a href=""></a>        <span class="st">"students"</span>: <span class="dv">28</span>,</span>
+<span id="cb46-13"><a href=""></a>        <span class="st">"room"</span>: <span class="st">"B105"</span></span>
+<span id="cb46-14"><a href=""></a>    }</span>
+<span id="cb46-15"><a href=""></a>}</span>
+<span id="cb46-16"><a href=""></a></span>
+<span id="cb46-17"><a href=""></a><span class="co"># Access nested values</span></span>
+<span id="cb46-18"><a href=""></a><span class="bu">print</span>(school[<span class="st">"CS101"</span>][<span class="st">"title"</span>])        <span class="co"># "Intro to Programming"</span></span>
+<span id="cb46-19"><a href=""></a><span class="bu">print</span>(school[<span class="st">"CS201"</span>][<span class="st">"instructor"</span>])   <span class="co"># "Dr. Sok"</span></span>
+<span id="cb46-20"><a href=""></a></span>
+<span id="cb46-21"><a href=""></a><span class="co"># Loop through courses</span></span>
+<span id="cb46-22"><a href=""></a><span class="cf">for</span> code, info <span class="kw">in</span> school.items():</span>
+<span id="cb46-23"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>code<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>info[<span class="st">'title'</span>]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>info[<span class="st">'students'</span>]<span class="sc">}</span><span class="ss"> students)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-7a-class-gradebook" class="slide level2">
+<h2>Practice 7A — Class Gradebook</h2>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href=""></a>gradebook <span class="op">=</span> [</span>
+<span id="cb47-2"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Sokha"</span>, <span class="st">"scores"</span>: [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>]},</span>
+<span id="cb47-3"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Dara"</span>, <span class="st">"scores"</span>: [<span class="dv">78</span>, <span class="dv">65</span>, <span class="dv">72</span>]},</span>
+<span id="cb47-4"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Chenda"</span>, <span class="st">"scores"</span>: [<span class="dv">95</span>, <span class="dv">98</span>, <span class="dv">92</span>]},</span>
+<span id="cb47-5"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Bopha"</span>, <span class="st">"scores"</span>: [<span class="dv">88</span>, <span class="dv">82</span>, <span class="dv">90</span>]},</span>
+<span id="cb47-6"><a href=""></a>    {<span class="st">"name"</span>: <span class="st">"Vanna"</span>, <span class="st">"scores"</span>: [<span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">68</span>]},</span>
+<span id="cb47-7"><a href=""></a>]</span>
+<span id="cb47-8"><a href=""></a></span>
+<span id="cb47-9"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb47-10"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'CLASS GRADEBOOK'</span><span class="sc">:^50}</span><span class="ss">"</span>)</span>
+<span id="cb47-11"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb47-12"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Name'</span><span class="sc">:&lt;12}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Scores'</span><span class="sc">:&lt;20}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Avg'</span><span class="sc">:&gt;6}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Grade'</span><span class="sc">:&gt;6}</span><span class="ss">"</span>)</span>
+<span id="cb47-13"><a href=""></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb47-14"><a href=""></a></span>
+<span id="cb47-15"><a href=""></a><span class="cf">for</span> student <span class="kw">in</span> gradebook:</span>
+<span id="cb47-16"><a href=""></a>    name <span class="op">=</span> student[<span class="st">"name"</span>]</span>
+<span id="cb47-17"><a href=""></a>    scores <span class="op">=</span> student[<span class="st">"scores"</span>]</span>
+<span id="cb47-18"><a href=""></a>    avg <span class="op">=</span> <span class="bu">sum</span>(scores) <span class="op">/</span> <span class="bu">len</span>(scores)</span>
+<span id="cb47-19"><a href=""></a></span>
+<span id="cb47-20"><a href=""></a>    <span class="co"># Determine grade</span></span>
+<span id="cb47-21"><a href=""></a>    <span class="cf">if</span> avg <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb47-22"><a href=""></a>        grade <span class="op">=</span> <span class="st">"A"</span></span>
+<span id="cb47-23"><a href=""></a>    <span class="cf">elif</span> avg <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb47-24"><a href=""></a>        grade <span class="op">=</span> <span class="st">"B"</span></span>
+<span id="cb47-25"><a href=""></a>    <span class="cf">elif</span> avg <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb47-26"><a href=""></a>        grade <span class="op">=</span> <span class="st">"C"</span></span>
+<span id="cb47-27"><a href=""></a>    <span class="cf">elif</span> avg <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb47-28"><a href=""></a>        grade <span class="op">=</span> <span class="st">"D"</span></span>
+<span id="cb47-29"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb47-30"><a href=""></a>        grade <span class="op">=</span> <span class="st">"F"</span></span>
+<span id="cb47-31"><a href=""></a></span>
+<span id="cb47-32"><a href=""></a>    scores_str <span class="op">=</span> <span class="st">", "</span>.join(<span class="bu">str</span>(s) <span class="cf">for</span> s <span class="kw">in</span> scores)</span>
+<span id="cb47-33"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:&lt;12}</span><span class="ss"> </span><span class="sc">{</span>scores_str<span class="sc">:&lt;20}</span><span class="ss"> </span><span class="sc">{</span>avg<span class="sc">:&gt;6.1f}</span><span class="ss"> </span><span class="sc">{</span>grade<span class="sc">:&gt;6}</span><span class="ss">"</span>)</span>
+<span id="cb47-34"><a href=""></a></span>
+<span id="cb47-35"><a href=""></a><span class="co"># Class statistics</span></span>
+<span id="cb47-36"><a href=""></a>all_avgs <span class="op">=</span> [<span class="bu">sum</span>(s[<span class="st">"scores"</span>]) <span class="op">/</span> <span class="bu">len</span>(s[<span class="st">"scores"</span>]) <span class="cf">for</span> s <span class="kw">in</span> gradebook]</span>
+<span id="cb47-37"><a href=""></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb47-38"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Class Average:'</span><span class="sc">:&lt;32}</span><span class="ss"> </span><span class="sc">{</span><span class="bu">sum</span>(all_avgs)<span class="op">/</span><span class="bu">len</span>(all_avgs)<span class="sc">:&gt;6.1f}</span><span class="ss">"</span>)</span>
+<span id="cb47-39"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Highest Average:'</span><span class="sc">:&lt;32}</span><span class="ss"> </span><span class="sc">{</span><span class="bu">max</span>(all_avgs)<span class="sc">:&gt;6.1f}</span><span class="ss">"</span>)</span>
+<span id="cb47-40"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Lowest Average:'</span><span class="sc">:&lt;32}</span><span class="ss"> </span><span class="sc">{</span><span class="bu">min</span>(all_avgs)<span class="sc">:&gt;6.1f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-8-full-practice-projects" class="title-slide slide level1 center">
+<h1>Part 8: Full Practice Projects</h1>
+
+</section>
+<section id="project-1-student-management-system" class="slide level2">
+<h2>Project 1 — Student Management System</h2>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">45</span>)</span>
+<span id="cb48-2"><a href=""></a><span class="bu">print</span>(<span class="st">"     🎓 Student Management System"</span>)</span>
+<span id="cb48-3"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">45</span>)</span>
+<span id="cb48-4"><a href=""></a></span>
+<span id="cb48-5"><a href=""></a>students <span class="op">=</span> []</span>
+<span id="cb48-6"><a href=""></a></span>
+<span id="cb48-7"><a href=""></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb48-8"><a href=""></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[1] Add Student  [2] View All  [3] Search"</span>)</span>
+<span id="cb48-9"><a href=""></a>    <span class="bu">print</span>(<span class="st">"[4] Statistics   [5] Quit"</span>)</span>
+<span id="cb48-10"><a href=""></a>    choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Choice: "</span>).strip()</span>
+<span id="cb48-11"><a href=""></a></span>
+<span id="cb48-12"><a href=""></a>    <span class="cf">if</span> choice <span class="op">==</span> <span class="st">"1"</span>:</span>
+<span id="cb48-13"><a href=""></a>        name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Name: "</span>).strip().title()</span>
+<span id="cb48-14"><a href=""></a>        sid <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  ID: "</span>).strip().upper()</span>
+<span id="cb48-15"><a href=""></a>        score <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Score: "</span>).strip()</span>
+<span id="cb48-16"><a href=""></a></span>
+<span id="cb48-17"><a href=""></a>        <span class="cf">if</span> <span class="kw">not</span> score.isdigit():</span>
+<span id="cb48-18"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  ❌ Invalid score!"</span>)</span>
+<span id="cb48-19"><a href=""></a>            <span class="cf">continue</span></span>
+<span id="cb48-20"><a href=""></a></span>
+<span id="cb48-21"><a href=""></a>        students.append({</span>
+<span id="cb48-22"><a href=""></a>            <span class="st">"name"</span>: name,</span>
+<span id="cb48-23"><a href=""></a>            <span class="st">"id"</span>: sid,</span>
+<span id="cb48-24"><a href=""></a>            <span class="st">"score"</span>: <span class="bu">int</span>(score)</span>
+<span id="cb48-25"><a href=""></a>        })</span>
+<span id="cb48-26"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  ✅ Added </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb48-27"><a href=""></a></span>
+<span id="cb48-28"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"2"</span>:</span>
+<span id="cb48-29"><a href=""></a>        <span class="cf">if</span> <span class="kw">not</span> students:</span>
+<span id="cb48-30"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  📭 No students yet."</span>)</span>
+<span id="cb48-31"><a href=""></a>            <span class="cf">continue</span></span>
+<span id="cb48-32"><a href=""></a></span>
+<span id="cb48-33"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">  </span><span class="sc">{</span><span class="st">'Name'</span><span class="sc">:&lt;15}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'ID'</span><span class="sc">:&lt;10}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Score'</span><span class="sc">:&gt;6}</span><span class="ss">"</span>)</span>
+<span id="cb48-34"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">33</span>)</span>
+<span id="cb48-35"><a href=""></a>        <span class="cf">for</span> s <span class="kw">in</span> students:</span>
+<span id="cb48-36"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>s[<span class="st">'name'</span>]<span class="sc">:&lt;15}</span><span class="ss"> </span><span class="sc">{</span>s[<span class="st">'id'</span>]<span class="sc">:&lt;10}</span><span class="ss"> </span><span class="sc">{</span>s[<span class="st">'score'</span>]<span class="sc">:&gt;6}</span><span class="ss">"</span>)</span>
+<span id="cb48-37"><a href=""></a></span>
+<span id="cb48-38"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"3"</span>:</span>
+<span id="cb48-39"><a href=""></a>        query <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Search name: "</span>).strip().lower()</span>
+<span id="cb48-40"><a href=""></a>        found <span class="op">=</span> [s <span class="cf">for</span> s <span class="kw">in</span> students <span class="cf">if</span> query <span class="kw">in</span> s[<span class="st">"name"</span>].lower()]</span>
+<span id="cb48-41"><a href=""></a></span>
+<span id="cb48-42"><a href=""></a>        <span class="cf">if</span> found:</span>
+<span id="cb48-43"><a href=""></a>            <span class="cf">for</span> s <span class="kw">in</span> found:</span>
+<span id="cb48-44"><a href=""></a>                <span class="bu">print</span>(<span class="ss">f"  📋 </span><span class="sc">{</span>s[<span class="st">'name'</span>]<span class="sc">}</span><span class="ss"> (ID: </span><span class="sc">{</span>s[<span class="st">'id'</span>]<span class="sc">}</span><span class="ss">) — Score: </span><span class="sc">{</span>s[<span class="st">'score'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb48-45"><a href=""></a>        <span class="cf">else</span>:</span>
+<span id="cb48-46"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  ❌ No match found."</span>)</span>
+<span id="cb48-47"><a href=""></a></span>
+<span id="cb48-48"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"4"</span>:</span>
+<span id="cb48-49"><a href=""></a>        <span class="cf">if</span> <span class="kw">not</span> students:</span>
+<span id="cb48-50"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  📭 No data."</span>)</span>
+<span id="cb48-51"><a href=""></a>            <span class="cf">continue</span></span>
+<span id="cb48-52"><a href=""></a></span>
+<span id="cb48-53"><a href=""></a>        scores <span class="op">=</span> [s[<span class="st">"score"</span>] <span class="cf">for</span> s <span class="kw">in</span> students]</span>
+<span id="cb48-54"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">  Total students: </span><span class="sc">{</span><span class="bu">len</span>(students)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb48-55"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  Average score:  </span><span class="sc">{</span><span class="bu">sum</span>(scores)<span class="op">/</span><span class="bu">len</span>(scores)<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb48-56"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  Highest score:  </span><span class="sc">{</span><span class="bu">max</span>(scores)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb48-57"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  Lowest score:   </span><span class="sc">{</span><span class="bu">min</span>(scores)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb48-58"><a href=""></a></span>
+<span id="cb48-59"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"5"</span>:</span>
+<span id="cb48-60"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  Goodbye! 👋"</span>)</span>
+<span id="cb48-61"><a href=""></a>        <span class="cf">break</span></span>
+<span id="cb48-62"><a href=""></a></span>
+<span id="cb48-63"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb48-64"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  ❓ Invalid choice."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="project-2-inventory-tracker" class="slide level2">
+<h2>Project 2 — Inventory Tracker</h2>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb49-2"><a href=""></a><span class="bu">print</span>(<span class="st">"     📦 Simple Inventory Tracker"</span>)</span>
+<span id="cb49-3"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb49-4"><a href=""></a></span>
+<span id="cb49-5"><a href=""></a>inventory <span class="op">=</span> {}</span>
+<span id="cb49-6"><a href=""></a></span>
+<span id="cb49-7"><a href=""></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb49-8"><a href=""></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[1] Add Item  [2] Update Stock  [3] View All"</span>)</span>
+<span id="cb49-9"><a href=""></a>    <span class="bu">print</span>(<span class="st">"[4] Search    [5] Low Stock Alert  [6] Quit"</span>)</span>
+<span id="cb49-10"><a href=""></a>    choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Choice: "</span>).strip()</span>
+<span id="cb49-11"><a href=""></a></span>
+<span id="cb49-12"><a href=""></a>    <span class="cf">if</span> choice <span class="op">==</span> <span class="st">"1"</span>:</span>
+<span id="cb49-13"><a href=""></a>        name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Item name: "</span>).strip().title()</span>
+<span id="cb49-14"><a href=""></a>        qty <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Quantity: "</span>).strip()</span>
+<span id="cb49-15"><a href=""></a>        price <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Price ($): "</span>).strip()</span>
+<span id="cb49-16"><a href=""></a></span>
+<span id="cb49-17"><a href=""></a>        <span class="cf">if</span> <span class="kw">not</span> qty.isdigit():</span>
+<span id="cb49-18"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  ❌ Invalid quantity!"</span>)</span>
+<span id="cb49-19"><a href=""></a>            <span class="cf">continue</span></span>
+<span id="cb49-20"><a href=""></a></span>
+<span id="cb49-21"><a href=""></a>        inventory[name] <span class="op">=</span> {</span>
+<span id="cb49-22"><a href=""></a>            <span class="st">"qty"</span>: <span class="bu">int</span>(qty),</span>
+<span id="cb49-23"><a href=""></a>            <span class="st">"price"</span>: <span class="bu">float</span>(price)</span>
+<span id="cb49-24"><a href=""></a>        }</span>
+<span id="cb49-25"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  ✅ Added </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb49-26"><a href=""></a></span>
+<span id="cb49-27"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"2"</span>:</span>
+<span id="cb49-28"><a href=""></a>        name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Item name: "</span>).strip().title()</span>
+<span id="cb49-29"><a href=""></a>        <span class="cf">if</span> name <span class="kw">not</span> <span class="kw">in</span> inventory:</span>
+<span id="cb49-30"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  ❌ '</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">' not found."</span>)</span>
+<span id="cb49-31"><a href=""></a>            <span class="cf">continue</span></span>
+<span id="cb49-32"><a href=""></a></span>
+<span id="cb49-33"><a href=""></a>        change <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Add/remove how many? (+5 or -3): "</span>).strip()</span>
+<span id="cb49-34"><a href=""></a>        <span class="cf">try</span>:</span>
+<span id="cb49-35"><a href=""></a>            inventory[name][<span class="st">"qty"</span>] <span class="op">+=</span> <span class="bu">int</span>(change)</span>
+<span id="cb49-36"><a href=""></a>            <span class="cf">if</span> inventory[name][<span class="st">"qty"</span>] <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb49-37"><a href=""></a>                inventory[name][<span class="st">"qty"</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb49-38"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  ✅ </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> stock: </span><span class="sc">{</span>inventory[name][<span class="st">'qty'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb49-39"><a href=""></a>        <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb49-40"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  ❌ Invalid number!"</span>)</span>
+<span id="cb49-41"><a href=""></a></span>
+<span id="cb49-42"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"3"</span>:</span>
+<span id="cb49-43"><a href=""></a>        <span class="cf">if</span> <span class="kw">not</span> inventory:</span>
+<span id="cb49-44"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  📭 Inventory is empty."</span>)</span>
+<span id="cb49-45"><a href=""></a>            <span class="cf">continue</span></span>
+<span id="cb49-46"><a href=""></a></span>
+<span id="cb49-47"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">  </span><span class="sc">{</span><span class="st">'Item'</span><span class="sc">:&lt;18}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Qty'</span><span class="sc">:&gt;5}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Price'</span><span class="sc">:&gt;8}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Value'</span><span class="sc">:&gt;10}</span><span class="ss">"</span>)</span>
+<span id="cb49-48"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">43</span>)</span>
+<span id="cb49-49"><a href=""></a>        total_value <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb49-50"><a href=""></a>        <span class="cf">for</span> name, info <span class="kw">in</span> <span class="bu">sorted</span>(inventory.items()):</span>
+<span id="cb49-51"><a href=""></a>            value <span class="op">=</span> info[<span class="st">"qty"</span>] <span class="op">*</span> info[<span class="st">"price"</span>]</span>
+<span id="cb49-52"><a href=""></a>            total_value <span class="op">+=</span> value</span>
+<span id="cb49-53"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>name<span class="sc">:&lt;18}</span><span class="ss"> </span><span class="sc">{</span>info[<span class="st">'qty'</span>]<span class="sc">:&gt;5}</span><span class="ss"> $</span><span class="sc">{</span>info[<span class="st">'price'</span>]<span class="sc">:&gt;7.2f}</span><span class="ss"> $</span><span class="sc">{</span>value<span class="sc">:&gt;9.2f}</span><span class="ss">"</span>)</span>
+<span id="cb49-54"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">43</span>)</span>
+<span id="cb49-55"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span><span class="st">'Total Inventory Value:'</span><span class="sc">:&gt;31}</span><span class="ss"> $</span><span class="sc">{</span>total_value<span class="sc">:&gt;9.2f}</span><span class="ss">"</span>)</span>
+<span id="cb49-56"><a href=""></a></span>
+<span id="cb49-57"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"4"</span>:</span>
+<span id="cb49-58"><a href=""></a>        query <span class="op">=</span> <span class="bu">input</span>(<span class="st">"  Search: "</span>).strip().lower()</span>
+<span id="cb49-59"><a href=""></a>        found <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> inventory.items() <span class="cf">if</span> query <span class="kw">in</span> k.lower()}</span>
+<span id="cb49-60"><a href=""></a>        <span class="cf">if</span> found:</span>
+<span id="cb49-61"><a href=""></a>            <span class="cf">for</span> name, info <span class="kw">in</span> found.items():</span>
+<span id="cb49-62"><a href=""></a>                <span class="bu">print</span>(<span class="ss">f"  📋 </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>info[<span class="st">'qty'</span>]<span class="sc">}</span><span class="ss"> units @ $</span><span class="sc">{</span>info[<span class="st">'price'</span>]<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb49-63"><a href=""></a>        <span class="cf">else</span>:</span>
+<span id="cb49-64"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  ❌ No match."</span>)</span>
+<span id="cb49-65"><a href=""></a></span>
+<span id="cb49-66"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"5"</span>:</span>
+<span id="cb49-67"><a href=""></a>        threshold <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb49-68"><a href=""></a>        low <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> inventory.items() <span class="cf">if</span> v[<span class="st">"qty"</span>] <span class="op">&lt;=</span> threshold}</span>
+<span id="cb49-69"><a href=""></a>        <span class="cf">if</span> low:</span>
+<span id="cb49-70"><a href=""></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">  ⚠️ Items with </span><span class="sc">{</span>threshold<span class="sc">}</span><span class="ss"> or fewer units:"</span>)</span>
+<span id="cb49-71"><a href=""></a>            <span class="cf">for</span> name, info <span class="kw">in</span> low.items():</span>
+<span id="cb49-72"><a href=""></a>                <span class="bu">print</span>(<span class="ss">f"    🔴 </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>info[<span class="st">'qty'</span>]<span class="sc">}</span><span class="ss"> left"</span>)</span>
+<span id="cb49-73"><a href=""></a>        <span class="cf">else</span>:</span>
+<span id="cb49-74"><a href=""></a>            <span class="bu">print</span>(<span class="st">"  ✅ All items are well-stocked!"</span>)</span>
+<span id="cb49-75"><a href=""></a></span>
+<span id="cb49-76"><a href=""></a>    <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">"6"</span>:</span>
+<span id="cb49-77"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  Goodbye! 👋"</span>)</span>
+<span id="cb49-78"><a href=""></a>        <span class="cf">break</span></span>
+<span id="cb49-79"><a href=""></a></span>
+<span id="cb49-80"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb49-81"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  ❓ Invalid choice."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="project-3-quiz-game" class="slide level2">
+<h2>Project 3 — Quiz Game</h2>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb50-2"><a href=""></a><span class="bu">print</span>(<span class="st">"     🧠 Python Quiz Game"</span>)</span>
+<span id="cb50-3"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb50-4"><a href=""></a></span>
+<span id="cb50-5"><a href=""></a><span class="co"># Quiz data: list of dictionaries</span></span>
+<span id="cb50-6"><a href=""></a>quiz <span class="op">=</span> [</span>
+<span id="cb50-7"><a href=""></a>    {</span>
+<span id="cb50-8"><a href=""></a>        <span class="st">"question"</span>: <span class="st">"What data type is [1, 2, 3]?"</span>,</span>
+<span id="cb50-9"><a href=""></a>        <span class="st">"options"</span>: [<span class="st">"A. String"</span>, <span class="st">"B. Tuple"</span>, <span class="st">"C. List"</span>, <span class="st">"D. Dictionary"</span>],</span>
+<span id="cb50-10"><a href=""></a>        <span class="st">"answer"</span>: <span class="st">"C"</span></span>
+<span id="cb50-11"><a href=""></a>    },</span>
+<span id="cb50-12"><a href=""></a>    {</span>
+<span id="cb50-13"><a href=""></a>        <span class="st">"question"</span>: <span class="st">"Which bracket is used for dictionaries?"</span>,</span>
+<span id="cb50-14"><a href=""></a>        <span class="st">"options"</span>: [<span class="st">"A. []"</span>, <span class="st">"B. ()"</span>, <span class="st">"C. &lt;&gt;"</span>, <span class="st">"D. </span><span class="sc">{}</span><span class="st">"</span>],</span>
+<span id="cb50-15"><a href=""></a>        <span class="st">"answer"</span>: <span class="st">"D"</span></span>
+<span id="cb50-16"><a href=""></a>    },</span>
+<span id="cb50-17"><a href=""></a>    {</span>
+<span id="cb50-18"><a href=""></a>        <span class="st">"question"</span>: <span class="st">"What does append() do?"</span>,</span>
+<span id="cb50-19"><a href=""></a>        <span class="st">"options"</span>: [<span class="st">"A. Removes an item"</span>, <span class="st">"B. Adds to the end"</span>, <span class="st">"C. Sorts the list"</span>, <span class="st">"D. Reverses the list"</span>],</span>
+<span id="cb50-20"><a href=""></a>        <span class="st">"answer"</span>: <span class="st">"B"</span></span>
+<span id="cb50-21"><a href=""></a>    },</span>
+<span id="cb50-22"><a href=""></a>    {</span>
+<span id="cb50-23"><a href=""></a>        <span class="st">"question"</span>: <span class="st">"Tuples are ___?"</span>,</span>
+<span id="cb50-24"><a href=""></a>        <span class="st">"options"</span>: [<span class="st">"A. Mutable"</span>, <span class="st">"B. Immutable"</span>, <span class="st">"C. Unordered"</span>, <span class="st">"D. Empty"</span>],</span>
+<span id="cb50-25"><a href=""></a>        <span class="st">"answer"</span>: <span class="st">"B"</span></span>
+<span id="cb50-26"><a href=""></a>    },</span>
+<span id="cb50-27"><a href=""></a>    {</span>
+<span id="cb50-28"><a href=""></a>        <span class="st">"question"</span>: <span class="st">"How do you access dict value safely?"</span>,</span>
+<span id="cb50-29"><a href=""></a>        <span class="st">"options"</span>: [<span class="st">"A. dict[key]"</span>, <span class="st">"B. dict.find(key)"</span>, <span class="st">"C. dict.get(key)"</span>, <span class="st">"D. dict.value(key)"</span>],</span>
+<span id="cb50-30"><a href=""></a>        <span class="st">"answer"</span>: <span class="st">"C"</span></span>
+<span id="cb50-31"><a href=""></a>    },</span>
+<span id="cb50-32"><a href=""></a>]</span>
+<span id="cb50-33"><a href=""></a></span>
+<span id="cb50-34"><a href=""></a>score <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb50-35"><a href=""></a>total <span class="op">=</span> <span class="bu">len</span>(quiz)</span>
+<span id="cb50-36"><a href=""></a></span>
+<span id="cb50-37"><a href=""></a><span class="cf">for</span> i, q <span class="kw">in</span> <span class="bu">enumerate</span>(quiz, <span class="dv">1</span>):</span>
+<span id="cb50-38"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Question </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>q[<span class="st">'question'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb50-39"><a href=""></a>    <span class="cf">for</span> option <span class="kw">in</span> q[<span class="st">"options"</span>]:</span>
+<span id="cb50-40"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>option<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb50-41"><a href=""></a></span>
+<span id="cb50-42"><a href=""></a>    user_answer <span class="op">=</span> <span class="bu">input</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Your answer (A/B/C/D): "</span>).strip().upper()</span>
+<span id="cb50-43"><a href=""></a></span>
+<span id="cb50-44"><a href=""></a>    <span class="cf">if</span> user_answer <span class="op">==</span> q[<span class="st">"answer"</span>]:</span>
+<span id="cb50-45"><a href=""></a>        <span class="bu">print</span>(<span class="st">"  ✅ Correct!"</span>)</span>
+<span id="cb50-46"><a href=""></a>        score <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb50-47"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb50-48"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  ❌ Wrong! The answer was </span><span class="sc">{</span>q[<span class="st">'answer'</span>]<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb50-49"><a href=""></a></span>
+<span id="cb50-50"><a href=""></a><span class="co"># Results</span></span>
+<span id="cb50-51"><a href=""></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb50-52"><a href=""></a><span class="bu">print</span>(<span class="ss">f"  Score: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>score<span class="op">/</span>total<span class="op">*</span><span class="dv">100</span><span class="sc">:.0f}</span><span class="ss">%)"</span>)</span>
+<span id="cb50-53"><a href=""></a><span class="cf">if</span> score <span class="op">==</span> total:</span>
+<span id="cb50-54"><a href=""></a>    <span class="bu">print</span>(<span class="st">"  🏆 Perfect score! Amazing!"</span>)</span>
+<span id="cb50-55"><a href=""></a><span class="cf">elif</span> score <span class="op">&gt;=</span> total <span class="op">*</span> <span class="fl">0.7</span>:</span>
+<span id="cb50-56"><a href=""></a>    <span class="bu">print</span>(<span class="st">"  👍 Good job! Keep learning!"</span>)</span>
+<span id="cb50-57"><a href=""></a><span class="cf">else</span>:</span>
+<span id="cb50-58"><a href=""></a>    <span class="bu">print</span>(<span class="st">"  📚 Keep practicing! You'll get better!"</span>)</span>
+<span id="cb50-59"><a href=""></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="comparison-list-vs-tuple-vs-dictionary" class="slide level2">
+<h2>Comparison: List vs Tuple vs Dictionary</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>List <code>[]</code></th>
+<th>Tuple <code>()</code></th>
+<th>Dictionary <code>{}</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ordered</strong></td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+<td>✅ (insertion order)</td>
+</tr>
+<tr class="even">
+<td><strong>Mutable</strong></td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr class="odd">
+<td><strong>Duplicates</strong></td>
+<td>✅ Allowed</td>
+<td>✅ Allowed</td>
+<td>❌ Keys unique</td>
+</tr>
+<tr class="even">
+<td><strong>Access by</strong></td>
+<td>Index <code>[0]</code></td>
+<td>Index <code>[0]</code></td>
+<td>Key <code>["name"]</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Best for</strong></td>
+<td>Collections that change</td>
+<td>Fixed data</td>
+<td>Key-value lookups</td>
+</tr>
+<tr class="even">
+<td><strong>Example</strong></td>
+<td><code>[85, 92, 78]</code></td>
+<td><code>(10, 20)</code></td>
+<td><code>{"name": "Sokha"}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>🎯 When to Use Each</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>List</strong> → A collection of similar items (student names, scores, items)</li>
+<li><strong>Tuple</strong> → Fixed data that shouldn’t change (coordinates, RGB colors, dates)</li>
+<li><strong>Dictionary</strong> → Data with labels/names (student profile, settings, config)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-what-youve-learned" class="slide level2">
+<h2>Summary: What You’ve Learned</h2>
+<p><strong>Lists:</strong></p>
+<ul>
+<li>Create: <code>fruits = ["apple", "banana"]</code></li>
+<li>Access: <code>fruits[0]</code>, <code>fruits[-1]</code>, <code>fruits[1:3]</code></li>
+<li>Modify: <code>append()</code>, <code>insert()</code>, <code>remove()</code>, <code>pop()</code>, <code>sort()</code></li>
+<li>Loop: <code>for item in list:</code>, <code>for i, item in enumerate(list):</code></li>
+</ul>
+<p><strong>Tuples:</strong></p>
+<ul>
+<li>Create: <code>point = (10, 20)</code></li>
+<li>Access: <code>point[0]</code>, <code>point[1]</code></li>
+<li>Unpack: <code>x, y = point</code></li>
+<li>Immutable — cannot change after creation</li>
+</ul>
+<p><strong>Dictionaries:</strong></p>
+<ul>
+<li>Create: <code>student = {"name": "Sokha", "age": 20}</code></li>
+<li>Access: <code>student["name"]</code> or <code>student.get("name")</code></li>
+<li>Modify: <code>student["age"] = 21</code>, <code>student.update({...})</code></li>
+<li>Loop: <code>for key, value in dict.items():</code></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>🚀 Key Takeaways</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Lists</strong> are your go-to for ordered collections — use <code>append()</code> and <code>for</code> loops constantly</li>
+<li><strong>Tuples</strong> are for fixed data — use unpacking to make code cleaner</li>
+<li><strong>Dictionaries</strong> are for labeled data — use <code>.get()</code> for safe access</li>
+<li><strong>Nested structures</strong> (list of dicts) are how real programs organize data</li>
+<li>Always use <code>in</code> to check membership before accessing: <code>if key in dict:</code></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="common-mistakes-to-avoid" class="slide level2">
+<h2>Common Mistakes to Avoid</h2>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href=""></a><span class="co"># ❌ Mistake 1: Modifying a list while looping over it</span></span>
+<span id="cb51-2"><a href=""></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb51-3"><a href=""></a><span class="cf">for</span> n <span class="kw">in</span> numbers:</span>
+<span id="cb51-4"><a href=""></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb51-5"><a href=""></a>        numbers.remove(n)    <span class="co"># ❌ Skips items!</span></span>
+<span id="cb51-6"><a href=""></a><span class="co"># ✅ Use a new list instead:</span></span>
+<span id="cb51-7"><a href=""></a>numbers <span class="op">=</span> [n <span class="cf">for</span> n <span class="kw">in</span> numbers <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>]</span>
+<span id="cb51-8"><a href=""></a></span>
+<span id="cb51-9"><a href=""></a><span class="co"># ❌ Mistake 2: Using dict["key"] without checking</span></span>
+<span id="cb51-10"><a href=""></a>student <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Sokha"</span>}</span>
+<span id="cb51-11"><a href=""></a><span class="bu">print</span>(student[<span class="st">"email"</span>])          <span class="co"># ❌ KeyError!</span></span>
+<span id="cb51-12"><a href=""></a><span class="bu">print</span>(student.get(<span class="st">"email"</span>, <span class="st">"N/A"</span>))  <span class="co"># ✅ Safe!</span></span>
+<span id="cb51-13"><a href=""></a></span>
+<span id="cb51-14"><a href=""></a><span class="co"># ❌ Mistake 3: Confusing append and extend</span></span>
+<span id="cb51-15"><a href=""></a>items <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb51-16"><a href=""></a>items.append([<span class="dv">4</span>, <span class="dv">5</span>])     <span class="co"># ❌ [1, 2, 3, [4, 5]]</span></span>
+<span id="cb51-17"><a href=""></a>items.extend([<span class="dv">4</span>, <span class="dv">5</span>])     <span class="co"># ✅ [1, 2, 3, 4, 5]</span></span>
+<span id="cb51-18"><a href=""></a></span>
+<span id="cb51-19"><a href=""></a><span class="co"># ❌ Mistake 4: Forgetting the comma in single-item tuple</span></span>
+<span id="cb51-20"><a href=""></a>t <span class="op">=</span> (<span class="dv">42</span>)     <span class="co"># ❌ This is just the integer 42!</span></span>
+<span id="cb51-21"><a href=""></a>t <span class="op">=</span> (<span class="dv">42</span>,)    <span class="co"># ✅ This is a tuple!</span></span>
+<span id="cb51-22"><a href=""></a></span>
+<span id="cb51-23"><a href=""></a><span class="co"># ❌ Mistake 5: Using a list as a dictionary key</span></span>
+<span id="cb51-24"><a href=""></a>d <span class="op">=</span> {[<span class="dv">1</span>, <span class="dv">2</span>]: <span class="st">"hello"</span>}    <span class="co"># ❌ TypeError! Lists are mutable</span></span>
+<span id="cb51-25"><a href=""></a>d <span class="op">=</span> {(<span class="dv">1</span>, <span class="dv">2</span>): <span class="st">"hello"</span>}    <span class="co"># ✅ Tuples can be keys!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="quick-reference-card" class="slide level2">
+<h2>Quick Reference Card</h2>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href=""></a><span class="co"># --- LISTS ---</span></span>
+<span id="cb52-2"><a href=""></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb52-3"><a href=""></a>fruits.append(<span class="st">"durian"</span>)        <span class="co"># Add to end</span></span>
+<span id="cb52-4"><a href=""></a>fruits.insert(<span class="dv">1</span>, <span class="st">"avocado"</span>)    <span class="co"># Add at position</span></span>
+<span id="cb52-5"><a href=""></a>fruits.extend([<span class="st">"fig"</span>, <span class="st">"grape"</span>])<span class="co"># Add multiple</span></span>
+<span id="cb52-6"><a href=""></a>fruits.remove(<span class="st">"banana"</span>)        <span class="co"># Remove by value</span></span>
+<span id="cb52-7"><a href=""></a>fruits.pop()                   <span class="co"># Remove last</span></span>
+<span id="cb52-8"><a href=""></a>fruits.sort()                  <span class="co"># Sort in place</span></span>
+<span id="cb52-9"><a href=""></a>fruits.reverse()               <span class="co"># Reverse in place</span></span>
+<span id="cb52-10"><a href=""></a><span class="bu">len</span>(fruits)                    <span class="co"># Count items</span></span>
+<span id="cb52-11"><a href=""></a><span class="co">"apple"</span> <span class="kw">in</span> fruits              <span class="co"># Check membership</span></span>
+<span id="cb52-12"><a href=""></a></span>
+<span id="cb52-13"><a href=""></a><span class="co"># --- TUPLES ---</span></span>
+<span id="cb52-14"><a href=""></a>point <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb52-15"><a href=""></a>x, y <span class="op">=</span> point                  <span class="co"># Unpack</span></span>
+<span id="cb52-16"><a href=""></a>point.count(<span class="dv">10</span>)                <span class="co"># Count value</span></span>
+<span id="cb52-17"><a href=""></a>point.index(<span class="dv">20</span>)                <span class="co"># Find position</span></span>
+<span id="cb52-18"><a href=""></a><span class="bu">list</span>(point)                    <span class="co"># Convert to list</span></span>
+<span id="cb52-19"><a href=""></a></span>
+<span id="cb52-20"><a href=""></a><span class="co"># --- DICTIONARIES ---</span></span>
+<span id="cb52-21"><a href=""></a>d <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Sokha"</span>, <span class="st">"age"</span>: <span class="dv">20</span>}</span>
+<span id="cb52-22"><a href=""></a>d[<span class="st">"major"</span>] <span class="op">=</span> <span class="st">"CS"</span>             <span class="co"># Add/update</span></span>
+<span id="cb52-23"><a href=""></a>d.get(<span class="st">"email"</span>, <span class="st">"N/A"</span>)         <span class="co"># Safe access</span></span>
+<span id="cb52-24"><a href=""></a>d.pop(<span class="st">"age"</span>)                  <span class="co"># Remove key</span></span>
+<span id="cb52-25"><a href=""></a>d.update({<span class="st">"gpa"</span>: <span class="fl">3.75</span>})       <span class="co"># Update multiple</span></span>
+<span id="cb52-26"><a href=""></a>d.keys()                      <span class="co"># All keys</span></span>
+<span id="cb52-27"><a href=""></a>d.values()                    <span class="co"># All values</span></span>
+<span id="cb52-28"><a href=""></a>d.items()                     <span class="co"># All key-value pairs</span></span>
+<span id="cb52-29"><a href=""></a><span class="co">"name"</span> <span class="kw">in</span> d                   <span class="co"># Check key exists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="next-class" class="slide level2">
+<h2>Next Class</h2>
+<p>Next class we will dive deeper into <strong>Functions</strong> — writing your own reusable blocks of code!</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>🚀 Get Ready</strong></p>
+</div>
+<div class="callout-content">
+<p>Functions + Data structures = powerful programs! Imagine writing a function that calculates the average of ANY list, or a function that searches a dictionary of students.</p>
+<p><strong>Practice at home:</strong> Write a program that:</p>
+<ul>
+<li>Stores a shopping list and calculates the total price</li>
+<li>Creates a phonebook using a dictionary with add/search/delete</li>
+<li>Takes a list of scores and returns a dictionary with statistics (min, max, avg, count)</li>
+</ul>
+</div>
+</div>
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="session1516_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="session1516_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="session1516_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="session1516_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="session1516_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="session1516_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="session1516_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="session1516_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="session1516_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="session1516_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
